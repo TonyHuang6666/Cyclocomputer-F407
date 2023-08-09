@@ -1,0 +1,58 @@
+solution:
+  created-by: uv2csolution@1.0.0
+  created-for: CMSIS-Toolbox@2.0.0
+  packs:
+    - pack: Keil::STM32F1xx_DFP
+  target-types:
+    - type: Target_1
+      device: STM32F103C8
+      processor:
+        trustzone: non-secure
+      compiler: AC6
+      add-path:
+        - Driver
+        - Library
+        - Peripherals
+        - Start
+        - System
+        - User
+        - Peripherals/0.96_OLED_IIC
+        - Peripherals/LED
+        - Peripherals/MPU6050
+        - Peripherals/W25Q64
+        - Peripherals/2.4_TFT_SPI
+        - Peripherals/Key
+        - FreeRTOS/include
+        - FreeRTOS/portable/RVDS/ARM_CM3
+        - FreeRTOS
+      debug: "on"
+      define:
+        - USE_STDPERIPH_DRIVER
+      optimize: none
+      misc:
+        - C-CPP:
+            - -fno-rtti
+            - -funsigned-char
+            - -fshort-enums
+            - -fshort-wchar
+            - -ffunction-sections
+            - -std=c11
+            - -w
+          ASM:
+            - -masm=auto
+          Link:
+            - --map
+            - --load_addr_map_info
+            - --xref
+            - --callgraph
+            - --symbols
+            - --info sizes
+            - --info totals
+            - --info unused
+            - --info veneers
+            - --list
+            - --strict
+            - --summary_stderr
+            - --info summarysizes
+  projects:
+    - project: Cyclocomputer.cproject.yaml

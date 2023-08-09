@@ -1,0 +1,133 @@
+project:
+  linker:
+    - script: Cyclocomputer_Target_1.sct
+  groups:
+    - group: Driver
+      files:
+        - file: Driver/ADC.c
+        - file: Driver/ADC.h
+        - file: Driver/IIC.c
+        - file: Driver/IIC.h
+        - file: Driver/Serial.c
+        - file: Driver/Serial.h
+        - file: Driver/SPI.c
+        - file: Driver/SPI.h
+        - file: Driver/DMA.c
+        - file: Driver/DMA.h
+        - file: Driver/Input_Capture.c
+        - file: Driver/Input_Capture.h
+        - file: Driver/PWM.c
+        - file: Driver/PWM.h
+        - file: Driver/Timer.c
+        - file: Driver/Timer.h
+        - file: Driver/Timer_External_Clock.c
+        - file: Driver/Timer_External_Clock.h
+    - group: Library
+      files:
+        - file: Library/misc.c
+        - file: Library/misc.h
+        - file: Library/stm32f10x_adc.c
+        - file: Library/stm32f10x_adc.h
+        - file: Library/stm32f10x_bkp.c
+        - file: Library/stm32f10x_bkp.h
+        - file: Library/stm32f10x_can.c
+        - file: Library/stm32f10x_can.h
+        - file: Library/stm32f10x_cec.c
+        - file: Library/stm32f10x_cec.h
+        - file: Library/stm32f10x_crc.c
+        - file: Library/stm32f10x_crc.h
+        - file: Library/stm32f10x_dac.c
+        - file: Library/stm32f10x_dac.h
+        - file: Library/stm32f10x_dbgmcu.c
+        - file: Library/stm32f10x_dbgmcu.h
+        - file: Library/stm32f10x_dma.c
+        - file: Library/stm32f10x_dma.h
+        - file: Library/stm32f10x_exti.c
+        - file: Library/stm32f10x_exti.h
+        - file: Library/stm32f10x_flash.c
+        - file: Library/stm32f10x_flash.h
+        - file: Library/stm32f10x_fsmc.c
+        - file: Library/stm32f10x_fsmc.h
+        - file: Library/stm32f10x_gpio.c
+        - file: Library/stm32f10x_gpio.h
+        - file: Library/stm32f10x_i2c.c
+        - file: Library/stm32f10x_i2c.h
+        - file: Library/stm32f10x_iwdg.c
+        - file: Library/stm32f10x_iwdg.h
+        - file: Library/stm32f10x_pwr.c
+        - file: Library/stm32f10x_pwr.h
+        - file: Library/stm32f10x_rcc.c
+        - file: Library/stm32f10x_rcc.h
+        - file: Library/stm32f10x_rtc.c
+        - file: Library/stm32f10x_rtc.h
+        - file: Library/stm32f10x_sdio.c
+        - file: Library/stm32f10x_sdio.h
+        - file: Library/stm32f10x_spi.c
+        - file: Library/stm32f10x_spi.h
+        - file: Library/stm32f10x_tim.c
+        - file: Library/stm32f10x_tim.h
+        - file: Library/stm32f10x_usart.c
+        - file: Library/stm32f10x_usart.h
+        - file: Library/stm32f10x_wwdg.c
+        - file: Library/stm32f10x_wwdg.h
+    - group: Peripherals
+      files:
+        - file: Peripherals/0.96_OLED_IIC/0.96_OLED_IIC.c
+        - file: Peripherals/0.96_OLED_IIC/0.96_OLED_IIC.h
+        - file: Peripherals/0.96_OLED_IIC/0.96_OLED_IIC_Font.h
+        - file: Peripherals/Key/Key.c
+        - file: Peripherals/Key/Key.h
+        - file: Peripherals/MPU6050/MPU6050.c
+        - file: Peripherals/MPU6050/MPU6050.h
+        - file: Peripherals/MPU6050/MPU6050_Reg.h
+        - file: Peripherals/W25Q64/W25Q64.c
+        - file: Peripherals/W25Q64/W25Q64.h
+        - file: Peripherals/W25Q64/W25Q64_Order.h
+        - file: Peripherals/2.4_TFT_SPI/FONT.H
+        - file: Peripherals/2.4_TFT_SPI/pic.h
+        - file: Peripherals/2.4_TFT_SPI/test.c
+        - file: Peripherals/2.4_TFT_SPI/test.h
+        - file: Peripherals/Through_Beam_Sensor/Through_Beam_Sensor.c
+        - file: Peripherals/Through_Beam_Sensor/Through_Beam_Sensor.h
+        - file: Peripherals/DC Motor/DC_Motor.c
+        - file: Peripherals/DC Motor/DC_Motor.h
+        - file: Peripherals/Rotary Encoder/Rotary_Encoder.c
+        - file: Peripherals/Rotary Encoder/Rotary_Encoder.h
+        - file: Peripherals/Servo Motor/Servo_Motor.c
+        - file: Peripherals/Servo Motor/Servo_Motor.h
+        - file: Peripherals/2.4_TFT_SPI/2.4TFT.c
+        - file: Peripherals/2.4_TFT_SPI/2.4TFT.h
+    - group: Start
+      files:
+        - file: Start/core_cm3.c
+        - file: Start/core_cm3.h
+        - file: Start/startup_stm32f10x_md.s
+        - file: Start/stm32f10x.h
+        - file: Start/system_stm32f10x.c
+        - file: Start/system_stm32f10x.h
+    - group: System
+      files:
+        - file: System/Delay.c
+        - file: System/Delay.h
+        - file: System/sys.c
+        - file: System/sys.h
+    - group: User
+      files:
+        - file: User/stm32f10x_conf.h
+        - file: User/stm32f10x_it.c
+        - file: User/stm32f10x_it.h
+        - file: User/main.c
+    - group: FreeRTOS/Source
+      files:
+        - file: FreeRTOS/croutine.c
+        - file: FreeRTOS/event_groups.c
+        - file: FreeRTOS/list.c
+        - file: FreeRTOS/queue.c
+        - file: FreeRTOS/stream_buffer.c
+        - file: FreeRTOS/tasks.c
+        - file: FreeRTOS/timers.c
+        - file: FreeRTOS/FreeRTOSConfig.h
+    - group: FreeRTOS/Other
+      files:
+        - file: FreeRTOS/portable/RVDS/ARM_CM3/port.c
+        - file: FreeRTOS/portable/MemMang/heap_4.c
