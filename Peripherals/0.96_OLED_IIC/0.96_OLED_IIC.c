@@ -209,22 +209,29 @@ void OLED_ShowNum(uint8_t Line, uint8_t Column, uint32_t Number, uint8_t Length)
   */
 void OLED_ShowSignedNum(uint8_t Line, uint8_t Column, int32_t Number, uint8_t Length)
 {
-	uint8_t i;
-	uint32_t Number1;
-	if (Number >= 0)
-	{
-		OLED_ShowChar(Line, Column, '+');
-		Number1 = Number;
-	}
-	else
-	{
-		OLED_ShowChar(Line, Column, '-');
-		Number1 = -Number;
-	}
-	for (i = 0; i < Length; i++)							
-	{
-		OLED_ShowChar(Line, Column + i + 1, Number1 / OLED_Pow(10, Length - i - 1) % 10 + '0');
-	}
+    uint8_t i;
+    uint32_t Number1;
+
+    // 如果数字是非负数
+    if (Number >= 0)
+    {
+        OLED_ShowChar(Line, Column, '+'); // 在指定位置显示"+"号
+        Number1 = Number; // 将Number保存到Number1中
+    }
+    else
+    {
+        OLED_ShowChar(Line, Column, '-'); // 在指定位置显示"-"号
+        Number1 = -Number; // 将Number的绝对值保存到Number1中
+    }
+
+    // 循环逐位显示数字
+    for (i = 0; i < Length; i++)
+    {
+        // 在指定位置显示数字的每一位
+        OLED_ShowChar(Line, Column + i + 1, Number1 / OLED_Pow(10, Length - i - 1) % 10 + '0');
+        // 上面的操作通过将Number1除以10的(Length - i - 1)次方获取数字的每一位，
+        // 并通过取余操作获取每一位的值，然后加上ASCII码的'0'得到对应的字符。
+    }
 }
 
 /**

@@ -535,7 +535,7 @@ void _draw_circle_8(int xc, int yc, int x, int y, uint16_t c)
 /*****************************************************************************
  * @name       :void gui_circle(int xc, int yc,uint16_t c,int r, int fill)
  * @date       :2018-08-09 
- * @function   :Draw a circle of specified size at a specified location
+ * @function   :Draw a circle of specified Size at a specified location
  * @parameters :xc:the x coordinate of the Circular center 
                 yc:the y coordinate of the Circular center 
 								r:Circular radius
@@ -706,33 +706,33 @@ void Fill_Triangel(uint16_t x0,uint16_t y0,uint16_t x1,uint16_t y1,uint16_t x2,u
 }
 
 /*****************************************************************************
- * @name       :void LCD_ShowChar(uint16_t x,uint16_t y,uint16_t fc, uint16_t bc, uint8_t number,uint8_t size,uint8_t mode)
+ * @name       :void LCD_ShowChar(uint16_t x,uint16_t y,uint16_t fc, uint16_t bc, uint8_t Number,uint8_t Size,uint8_t mode)
  * @date       :2018-08-09 
  * @function   :Display a single English character
  * @parameters :x:the bebinning x coordinate of the Character display position
                 y:the bebinning y coordinate of the Character display position
 								fc:the color value of display character
 								bc:the background color of display character
-								number:the ascii code of display character(0~94)
-								size:the size of display character
+								Number:the ascii code of display character(0~94)
+								Size:the Size of display character
 								mode:0-no overlying,1-overlying
  * @retvalue   :None
 ******************************************************************************/ 
-void LCD_ShowChar(uint16_t x,uint16_t y,uint16_t fc, uint16_t bc, uint8_t number,uint8_t size,uint8_t mode)
+void LCD_ShowChar(uint16_t x,uint16_t y,uint16_t fc, uint16_t bc, uint8_t Number,uint8_t Size,uint8_t mode)
 {  
     uint8_t temp;
     uint8_t pos,t;
 	uint16_t colortemp=POINT_COLOR;      
 		   
-	number=number-' ';//得到偏移后的值
-	LCD_SetWindows(x,y,x+size/2-1,y+size-1);//设置单个文字显示窗口
+	Number=Number-' ';//得到偏移后的值
+	LCD_SetWindows(x,y,x+Size/2-1,y+Size-1);//设置单个文字显示窗口
 	if(!mode) //非叠加方式
 	{		
-		for(pos=0;pos<size;pos++)
+		for(pos=0;pos<Size;pos++)
 		{
-			if(size==12)temp=asc2_1206[number][pos];//调用1206字体
-			else temp=asc2_1608[number][pos];		 //调用1608字体
-			for(t=0;t<size/2;t++)
+			if(Size==12)temp=asc2_1206[Number][pos];//调用1206字体
+			else temp=asc2_1608[Number][pos];		 //调用1608字体
+			for(t=0;t<Size/2;t++)
 		    {                 
 		        if(temp&0x01)Lcd_WriteData_16Bit(fc); 
 				else Lcd_WriteData_16Bit(bc); 
@@ -743,11 +743,11 @@ void LCD_ShowChar(uint16_t x,uint16_t y,uint16_t fc, uint16_t bc, uint8_t number
 		}	
 	}else//叠加方式
 	{
-		for(pos=0;pos<size;pos++)
+		for(pos=0;pos<Size;pos++)
 		{
-			if(size==12)temp=asc2_1206[number][pos];//调用1206字体
-			else temp=asc2_1608[number][pos];		 //调用1608字体
-			for(t=0;t<size/2;t++)
+			if(Size==12)temp=asc2_1206[Number][pos];//调用1206字体
+			else temp=asc2_1608[Number][pos];		 //调用1608字体
+			for(t=0;t<Size/2;t++)
 		    {   
 				POINT_COLOR=fc;              
 		        if(temp&0x01)LCD_DrawPoint(x+t,y+pos);//画一个点    
@@ -760,24 +760,24 @@ void LCD_ShowChar(uint16_t x,uint16_t y,uint16_t fc, uint16_t bc, uint8_t number
 }
 
 /*****************************************************************************
- * @name       :void LCD_ShowString(uint16_t x,uint16_t y,uint8_t size,uint8_t *p,uint8_t mode)
+ * @name       :void LCD_ShowString(uint16_t x,uint16_t y,uint8_t Size,uint8_t *p,uint8_t mode)
  * @date       :2018-08-09 
  * @function   :Display English string
  * @parameters :x:the bebinning x coordinate of the English string
                 y:the bebinning y coordinate of the English string
 								p:the start address of the English string
-								size:the size of display character
+								Size:the Size of display character
 								mode:0-no overlying,1-overlying
  * @retvalue   :None
 ******************************************************************************/   	  
-void LCD_ShowString(uint16_t x,uint16_t y,uint8_t size,uint8_t *p,uint8_t mode)
+void LCD_ShowString(uint16_t x,uint16_t y,uint8_t Size,uint8_t *p,uint8_t mode)
 {         
     while((*p<='~')&&(*p>=' '))//判断是不是非法字符!
     {   
 		if(x>(lcddev.width-1)||y>(lcddev.height-1)) 
 		return;     
-        LCD_ShowChar(x,y,POINT_COLOR,BACK_COLOR,*p,size,mode);
-        x+=size/2;
+        LCD_ShowChar(x,y,POINT_COLOR,BACK_COLOR,*p,Size,mode);
+        x+=Size/2;
         p++;
     }  
 } 
@@ -800,37 +800,40 @@ uint32_t mypow(uint8_t m,uint8_t n)
 			 
 /**
  * @brief 在LCD屏幕上显示一个十进制数字
- * 
  * @param x: 数字起始点的x坐标
  * @param y: 数字起始点的y坐标
- * @param number: 要显示的数字
- * @param size: 要显示的数字的大小
+ * @param Number: 要显示的数字
+ * @param Length: 要显示的数字的位数
+ * @param Size: 要显示的数字的大小
  */
-void LCD_ShowNumber(uint16_t x, uint16_t y, uint32_t number, uint8_t size)
+void LCD_ShowNumber(uint16_t x, uint16_t y, int32_t Number, uint8_t Length, uint8_t Size)
 {
-    uint32_t temp=number;// temp用于存放当前数字
-    uint8_t startDisplay = 0, length = 1; // 表示是否开始显示数字;默认至少有1位
-
-	// 计算数字的位数
-    while (temp >= 10)
+    uint8_t i, temp;
+    uint8_t startDisplay = 0; // 表示是否开始显示数字
+    // 如果数字是负数，将其转换为正数并在指定位置显示"-"
+    if (Number < 0)
     {
-        length++;
-        temp /= 10;
+		LCD_ShowChar(x, y, POINT_COLOR, BACK_COLOR, '-', Size, 0);
+		Number = -Number;
     }
+	else
+	{
+		LCD_ShowChar(x, y, POINT_COLOR, BACK_COLOR, ' ', Size, 0);
+	}
     // 逐位遍历数字的每一位
-    for (uint8_t i = 0; i < length; i++)
+    for (i = 0; i < Length; i++)
     {
         // 获取当前位置的数字，通过除以10的len-t-1次方得到
-        temp = (number / mypow(10, length - i - 1)) % 10;
+        temp = (Number / mypow(10, Length - i - 1)) % 10;
 
         // 如果之前未开始显示数字且不是最后一位数字
-        if (!startDisplay && i < (length - 1))
+        if (!startDisplay && i < (Length - 1))
         {
             // 如果当前位数字是0，且不是最后一位数字
             if (temp == 0)
             {
                 // 显示一个空格，以便对齐其他数字
-                LCD_ShowChar(x + (size / 2) * i, y, POINT_COLOR, BACK_COLOR, ' ', size, 0);
+                LCD_ShowChar(x + Size / 2 + (Size / 2) * i, y, POINT_COLOR, BACK_COLOR, '0', Size, 0);
                 continue; // 跳过后续的显示数字操作
             }
             else
@@ -839,36 +842,44 @@ void LCD_ShowNumber(uint16_t x, uint16_t y, uint32_t number, uint8_t size)
                 // 或者 startDisplay = 1; // 开始显示数字
             }
         }
+
         // 在LCD上显示数字字符，temp+'0'将数字转换为对应的ASCII码字符
-        LCD_ShowChar(x + (size / 2) * i, y, POINT_COLOR, BACK_COLOR, temp + '0', size, 0);
+        LCD_ShowChar(x + Size / 2 + (Size / 2) * i+1, y, POINT_COLOR, BACK_COLOR, temp + '0', Size, 0);
     }
 }
 
-void LCD_ShowHexNumber(uint16_t x, uint16_t y, uint32_t number, uint8_t size)
+/**
+ * @brief 在LCD屏幕上显示一个十六进制数字
+ * @param x: 数字起始点的x坐标
+ * @param y: 数字起始点的y坐标
+ * @param Number: 要显示的数字
+ * @param Size: 要显示的数字的大小
+*/
+void LCD_ShowHexNumber(uint16_t x, uint16_t y, uint32_t Number, uint8_t Size)
 {
-	uint32_t temp=number;// temp用于存放当前数字
-	uint8_t startDisplay = 0, length = 1; // 表示是否开始显示数字;默认至少有1位
+	uint32_t temp=Number;// temp用于存放当前数字
+	uint8_t startDisplay = 0, Length = 1; // 表示是否开始显示数字;默认至少有1位
 
 	// 计算数字的位数
 	while (temp >= 16)
 	{
-		length++;
+		Length++;
 		temp /= 16;
 	}
 	// 逐位遍历数字的每一位
-	for (uint8_t i = 0; i < length; i++)
+	for (uint8_t i = 0; i < Length; i++)
 	{
 		// 获取当前位置的数字，通过除以10的len-t-1次方得到
-		temp = (number / mypow(16, length - i - 1)) % 16;
+		temp = (Number / mypow(16, Length - i - 1)) % 16;
 
 		// 如果之前未开始显示数字且不是最后一位数字
-		if (!startDisplay && i < (length - 1))
+		if (!startDisplay && i < (Length - 1))
 		{
 			// 如果当前位数字是0，且不是最后一位数字
 			if (temp == 0)
 			{
 				// 显示一个空格，以便对齐其他数字
-				LCD_ShowChar(x + (size / 2) * i, y, POINT_COLOR, BACK_COLOR, ' ', size, 0);
+				LCD_ShowChar(x + (Size / 2) * i, y, POINT_COLOR, BACK_COLOR, ' ', Size, 0);
 				continue; // 跳过后续的显示数字操作
 			}
 			else
@@ -880,11 +891,11 @@ void LCD_ShowHexNumber(uint16_t x, uint16_t y, uint32_t number, uint8_t size)
 		// 在LCD上显示数字字符，temp+'0'将数字转换为对应的ASCII码字符
 		if(temp<10)
 		{
-			LCD_ShowChar(x + (size / 2) * i, y, POINT_COLOR, BACK_COLOR, temp + '0', size, 0);
+			LCD_ShowChar(x + (Size / 2) * i, y, POINT_COLOR, BACK_COLOR, temp + '0', Size, 0);
 		}
 		else
 		{
-			LCD_ShowChar(x + (size / 2) * i, y, POINT_COLOR, BACK_COLOR, temp - 10 + 'A', size, 0);
+			LCD_ShowChar(x + (Size / 2) * i, y, POINT_COLOR, BACK_COLOR, temp - 10 + 'A', Size, 0);
 		}
 	}
 }
@@ -906,12 +917,12 @@ void GUI_DrawFont16(uint16_t x, uint16_t y, uint16_t fc, uint16_t bc, uint8_t *s
 {
 	uint8_t i,j;
 	uint16_t k;
-	uint16_t HZnumber;
+	uint16_t HZNumber;
 	uint16_t x0=x;
-	HZnumber=sizeof(tfont16)/sizeof(typFNT_GB16);	//自动统计汉字数目
+	HZNumber=sizeof(tfont16)/sizeof(typFNT_GB16);	//自动统计汉字数目
 	
 			
-	for (k=0;k<HZnumber;k++) 
+	for (k=0;k<HZNumber;k++) 
 	{
 	  if ((tfont16[k].Index[0]==*(s))&&(tfont16[k].Index[1]==*(s+1)))
 	  { 	LCD_SetWindows(x,y,x+16-1,y+16-1);
@@ -965,11 +976,11 @@ void GUI_DrawFont24(uint16_t x, uint16_t y, uint16_t fc, uint16_t bc, uint8_t *s
 {
 	uint8_t i,j;
 	uint16_t k;
-	uint16_t HZnumber;
+	uint16_t HZNumber;
 	uint16_t x0=x;
-	HZnumber=sizeof(tfont24)/sizeof(typFNT_GB24);	//自动统计汉字数目
+	HZNumber=sizeof(tfont24)/sizeof(typFNT_GB24);	//自动统计汉字数目
 		
-			for (k=0;k<HZnumber;k++) 
+			for (k=0;k<HZNumber;k++) 
 			{
 			  if ((tfont24[k].Index[0]==*(s))&&(tfont24[k].Index[1]==*(s+1)))
 			  { 	LCD_SetWindows(x,y,x+24-1,y+24-1);
@@ -1021,10 +1032,10 @@ void GUI_DrawFont32(uint16_t x, uint16_t y, uint16_t fc, uint16_t bc, uint8_t *s
 {
 	uint8_t i,j;
 	uint16_t k;
-	uint16_t HZnumber;
+	uint16_t HZNumber;
 	uint16_t x0=x;
-	HZnumber=sizeof(tfont32)/sizeof(typFNT_GB32);	//自动统计汉字数目
-	for (k=0;k<HZnumber;k++) 
+	HZNumber=sizeof(tfont32)/sizeof(typFNT_GB32);	//自动统计汉字数目
+	for (k=0;k<HZNumber;k++) 
 			{
 			  if ((tfont32[k].Index[0]==*(s))&&(tfont32[k].Index[1]==*(s+1)))
 			  { 	LCD_SetWindows(x,y,x+32-1,y+32-1);
@@ -1061,7 +1072,7 @@ void GUI_DrawFont32(uint16_t x, uint16_t y, uint16_t fc, uint16_t bc, uint8_t *s
 } 
 
 /*****************************************************************************
- * @name       :void Show_Str(uint16_t x, uint16_t y, uint16_t fc, uint16_t bc, uint8_t *str,uint8_t size,uint8_t mode)
+ * @name       :void Show_Str(uint16_t x, uint16_t y, uint16_t fc, uint16_t bc, uint8_t *str,uint8_t Size,uint8_t mode)
  * @date       :2018-08-09 
  * @function   :Display Chinese and English strings
  * @parameters :x:the bebinning x coordinate of the Chinese and English strings
@@ -1069,11 +1080,11 @@ void GUI_DrawFont32(uint16_t x, uint16_t y, uint16_t fc, uint16_t bc, uint8_t *s
 								fc:the color value of Chinese and English strings
 								bc:the background color of Chinese and English strings
 								str:the start address of the Chinese and English strings
-								size:the size of Chinese and English strings
+								Size:the Size of Chinese and English strings
 								mode:0-no overlying,1-overlying
  * @retvalue   :None
 ******************************************************************************/	   		   
-void Show_Str(uint16_t x, uint16_t y, uint16_t fc, uint16_t bc, uint8_t *str,uint8_t size,uint8_t mode)
+void Show_Str(uint16_t x, uint16_t y, uint16_t fc, uint16_t bc, uint8_t *str,uint8_t Size,uint8_t mode)
 {					
 	uint16_t x0=x;							  	  
   	uint8_t bHz=0;     //字符或者中文 
@@ -1081,28 +1092,28 @@ void Show_Str(uint16_t x, uint16_t y, uint16_t fc, uint16_t bc, uint8_t *str,uin
     { 
         if(!bHz)
         {
-			if(x>(lcddev.width-size/2)||y>(lcddev.height-size)) 
+			if(x>(lcddev.width-Size/2)||y>(lcddev.height-Size)) 
 			return; 
 	        if(*str>0x80)bHz=1;//中文 
 	        else              //字符
 	        {          
 		        if(*str==0x0D)//换行符号
 		        {         
-		            y+=size;
+		            y+=Size;
 					x=x0;
 		            str++; 
 		        }  
 		        else
 				{
-					if(size>16)//字库中没有集成12X24 16X32的英文字体,用8X16代替
+					if(Size>16)//字库中没有集成12X24 16X32的英文字体,用8X16代替
 					{  
 					LCD_ShowChar(x,y,fc,bc,*str,16,mode);
 					x+=8; //字符,为全字的一半 
 					}
 					else
 					{
-					LCD_ShowChar(x,y,fc,bc,*str,size,mode);
-					x+=size/2; //字符,为全字的一半 
+					LCD_ShowChar(x,y,fc,bc,*str,Size,mode);
+					x+=Size/2; //字符,为全字的一半 
 					}
 				} 
 				str++; 
@@ -1110,24 +1121,24 @@ void Show_Str(uint16_t x, uint16_t y, uint16_t fc, uint16_t bc, uint8_t *str,uin
 	        }
         }else//中文 
         {   
-			if(x>(lcddev.width-size)||y>(lcddev.height-size)) 
+			if(x>(lcddev.width-Size)||y>(lcddev.height-Size)) 
 			return;  
             bHz=0;//有汉字库    
-			if(size==32)
+			if(Size==32)
 			GUI_DrawFont32(x,y,fc,bc,str,mode);	 	
-			else if(size==24)
+			else if(Size==24)
 			GUI_DrawFont24(x,y,fc,bc,str,mode);	
 			else
 			GUI_DrawFont16(x,y,fc,bc,str,mode);
 				
 	        str+=2; 
-	        x+=size;//下一个汉字偏移	    
+	        x+=Size;//下一个汉字偏移	    
         }						 
     }   
 }
 
 /*****************************************************************************
- * @name       :void Gui_StrCenter(uint16_t x, uint16_t y, uint16_t fc, uint16_t bc, uint8_t *str,uint8_t size,uint8_t mode)
+ * @name       :void Gui_StrCenter(uint16_t x, uint16_t y, uint16_t fc, uint16_t bc, uint8_t *str,uint8_t Size,uint8_t mode)
  * @date       :2018-08-09 
  * @function   :Centered display of English and Chinese strings
  * @parameters :x:the bebinning x coordinate of the Chinese and English strings
@@ -1135,15 +1146,15 @@ void Show_Str(uint16_t x, uint16_t y, uint16_t fc, uint16_t bc, uint8_t *str,uin
 								fc:the color value of Chinese and English strings
 								bc:the background color of Chinese and English strings
 								str:the start address of the Chinese and English strings
-								size:the size of Chinese and English strings
+								Size:the Size of Chinese and English strings
 								mode:0-no overlying,1-overlying
  * @retvalue   :None
 ******************************************************************************/ 
-void Gui_StrCenter(uint16_t x, uint16_t y, uint16_t fc, uint16_t bc, uint8_t *str,uint8_t size,uint8_t mode)
+void Gui_StrCenter(uint16_t x, uint16_t y, uint16_t fc, uint16_t bc, uint8_t *str,uint8_t Size,uint8_t mode)
 {
-	uint16_t length=strlen((const char *)str);
-	uint16_t x1=(lcddev.width-length*8)/2;
-	Show_Str(x1,y,fc,bc,str,size,mode);
+	uint16_t Length=strlen((const char *)str);
+	uint16_t x1=(lcddev.width-Length*8)/2;
+	Show_Str(x1,y,fc,bc,str,Size,mode);
 } 
  
 /*****************************************************************************

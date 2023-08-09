@@ -115,7 +115,7 @@ void LCD_DrawRectangle(uint16_t x1, uint16_t y1, uint16_t x2, uint16_t y2);//画
 void Draw_Triangel(uint16_t x0,uint16_t y0,uint16_t x1,uint16_t y1,uint16_t x2,uint16_t y2);//画三角形
 void Fill_Triangel(uint16_t x0,uint16_t y0,uint16_t x1,uint16_t y1,uint16_t x2,uint16_t y2);//填充三角形
 void LCD_ShowChar(uint16_t x,uint16_t y,uint16_t fc, uint16_t bc, uint8_t num,uint8_t size,uint8_t mode);//显示一个字符
-void LCD_ShowNumber(uint16_t x, uint16_t y, uint32_t num, uint8_t size);//显示一个数字
+void LCD_ShowNumber(uint16_t x, uint16_t y, int32_t number, uint8_t length, uint8_t size);//显示一个数字
 void LCD_ShowHexNumber(uint16_t x, uint16_t y, uint32_t number, uint8_t size);//显示一个十六进制数字
 void LCD_ShowString(uint16_t x,uint16_t y,uint8_t size,uint8_t *p,uint8_t mode);//显示一个字符串,12/16字体
 void GUI_DrawFont16(uint16_t x, uint16_t y, uint16_t fc, uint16_t bc, uint8_t *s,uint8_t mode);

@@ -126,7 +126,17 @@ void MPU6050_Init(void)
     MPU6050_WriteReg(MPU6050_ACCEL_CONFIG,0x18);//不自测，配置量程为16g，最大
 }
 
-//方法1：用指针的方式返回六个返回值。要改进的话可以从0x3B开始连续读取14个寄存器的值
+
+/**
+ * @brief 读取MPU6050的数据。用指针的方式返回六个返回值。要改进的话可以从0x3B开始连续读取14个寄存器的值
+ * @param AccX:加速度计X轴的数据
+ * @param AccY:加速度计Y轴的数据
+ * @param AccZ:加速度计Z轴的数据
+ * @param GyroX:陀螺仪X轴的数据
+ * @param GyroY:陀螺仪Y轴的数据
+ * @param GyroZ:陀螺仪Z轴的数据
+ * @retval None
+ */
 void MPU6050_GetData(int16_t *AccX,int16_t *AccY,int16_t *AccZ,
                         int16_t *GyroX,int16_t *GyroY,int16_t *GyroZ)
 {
