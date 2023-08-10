@@ -4,53 +4,43 @@
 #include "font.h" 
 #include "SPI.h"
 
-
+LCD_Dev lcddev;//管理LCD重要参数。默认为竖屏
+uint16_t POINT_COLOR = BLACK,BACK_COLOR = WHITE;//画笔颜色,背景颜色
 
 /*LCD
 ********************************************************************************************************
 */
 
-//管理LCD重要参数
-//默认为竖屏
-_lcd_dev lcddev;
-
-//画笔颜色,背景颜色
-uint16_t POINT_COLOR = 0x0000,BACK_COLOR = 0xFFFF;  
-uint16_t DeviceCode;	 
-
 /*****************************************************************************
  * @name       :void LCD_WR_REG(uint8_t data)
- * @date       :2018-08-09 
  * @function   :Write an 8-bit command to the LCD screen
  * @parameters :data:Command value to be written
  * @retvalue   :None
-******************************************************************************/
+ ******************************************************************************/
 void LCD_WR_REG(uint8_t data)
-{ 
-   LCD_CS_CLR;     
-	 LCD_RS_CLR;	  
-   SPI_ExchangeByte(data);
-   LCD_CS_SET;	
+{
+	LCD_CS_CLR;
+	LCD_RS_CLR;
+	SPI_ExchangeByte(data);
+	LCD_CS_SET;
 }
 
 /*****************************************************************************
  * @name       :void LCD_WR_DATA(uint8_t data)
- * @date       :2018-08-09 
  * @function   :Write an 8-bit data to the LCD screen
  * @parameters :data:data value to be written
  * @retvalue   :None
-******************************************************************************/
+ ******************************************************************************/
 void LCD_WR_DATA(uint8_t data)
 {
-   LCD_CS_CLR;
-	 LCD_RS_SET;
-   SPI_ExchangeByte(data);
-   LCD_CS_SET;
+	LCD_CS_CLR;
+	LCD_RS_SET;
+	SPI_ExchangeByte(data);
+	LCD_CS_SET;
 }
 
 /*****************************************************************************
  * @name       :void LCD_WriteReg(uint8_t LCD_Reg, uint16_t LCD_RegValue)
- * @date       :2018-08-09 
  * @function   :Write data into registers
  * @parameters :LCD_Reg:Register address
                 LCD_RegValue:Data to be written
@@ -64,19 +54,17 @@ void LCD_WriteReg(uint8_t LCD_Reg, uint16_t LCD_RegValue)
 
 /*****************************************************************************
  * @name       :void LCD_WriteRAM_Prepare(void)
- * @date       :2018-08-09 
  * @function   :Write GRAM
  * @parameters :None
  * @retvalue   :None
 ******************************************************************************/	 
 void LCD_WriteRAM_Prepare(void)
 {
-	LCD_WR_REG(lcddev.wramcmd);
+	LCD_WR_REG(lcddev.Write_RAM_Cmd);
 }	 
 
 /*****************************************************************************
  * @name       :void Lcd_WriteData_16Bit(uint16_t Data)
- * @date       :2018-08-09 
  * @function   :Write an 16-bit command to the LCD screen
  * @parameters :Data:Data to be written
  * @retvalue   :None
@@ -92,7 +80,6 @@ void Lcd_WriteData_16Bit(uint16_t Data)
 
 /*****************************************************************************
  * @name       :void LCD_DrawPoint(uint16_t x,uint16_t y)
- * @date       :2018-08-09 
  * @function   :Write a pixel data at a specified location
  * @parameters :x:the x coordinate of the pixel
                 y:the y coordinate of the pixel
@@ -106,7 +93,6 @@ void LCD_DrawPoint(uint16_t x,uint16_t y)
 
 /*****************************************************************************
  * @name       :void LCD_Clear(uint16_t Color)
- * @date       :2018-08-09 
  * @function   :Full screen filled LCD screen
  * @parameters :color:Filled color
  * @retvalue   :None
@@ -114,12 +100,12 @@ void LCD_DrawPoint(uint16_t x,uint16_t y)
 void LCD_Clear(uint16_t Color)
 {
   unsigned int i,m;  
-	LCD_SetWindows(0,0,lcddev.width-1,lcddev.height-1);   
+	LCD_SetWindows(0,0,lcddev.Width-1,lcddev.Height-1);   
 	LCD_CS_CLR;
 	LCD_RS_SET;
-	for(i=0;i<lcddev.height;i++)
+	for(i=0;i<lcddev.Height;i++)
 	{
-    for(m=0;m<lcddev.width;m++)
+    for(m=0;m<lcddev.Width;m++)
     {	
 			Lcd_WriteData_16Bit(Color);
 		}
@@ -129,24 +115,22 @@ void LCD_Clear(uint16_t Color)
 
 /*****************************************************************************
  * @name       :void LCD_GPIOInit(void)
- * @date       :2018-08-09 
  * @function   :Initialization LCD screen GPIO
  * @parameters :None
  * @retvalue   :None
-******************************************************************************/	
+******************************************************************************/
 void LCD_GPIOInit(void)
 {
-	GPIO_InitTypeDef  GPIO_InitStructure;	      
-	RCC_APB2PeriphClockCmd( RCC_APB2Periph_GPIOB ,ENABLE);	//使能GPIOB时钟
-	GPIO_InitStructure.GPIO_Pin = GPIO_Pin_9| GPIO_Pin_10| GPIO_Pin_11| GPIO_Pin_12; //GPIOB9,10,11,12
-	GPIO_InitStructure.GPIO_Speed = GPIO_Speed_50MHz;
-	GPIO_InitStructure.GPIO_Mode = GPIO_Mode_Out_PP;   //推挽输出
-	GPIO_Init(GPIOB, &GPIO_InitStructure);//初始化
+	 GPIO_InitTypeDef GPIO_InitStructure;
+	 RCC_APB2PeriphClockCmd(RCC_APB2Periph_GPIOB, ENABLE);				   
+	 GPIO_InitStructure.GPIO_Pin = GPIO_Pin_9 | GPIO_Pin_10 | GPIO_Pin_11; // GPIOB12暂时不用
+	 GPIO_InitStructure.GPIO_Speed = GPIO_Speed_50MHz;					   
+	 GPIO_InitStructure.GPIO_Mode = GPIO_Mode_Out_PP;					   
+	 GPIO_Init(GPIOB, &GPIO_InitStructure);								   
 }
 
 /*****************************************************************************
  * @name       :void LCD_RESET(void)
- * @date       :2018-08-09 
  * @function   :Reset LCD screen
  * @parameters :None
  * @retvalue   :None
@@ -154,14 +138,13 @@ void LCD_GPIOInit(void)
 void LCD_RESET(void)
 {
 	LCD_RST_CLR;
-	Delay_ms(100);	
+	Delay_ms(10);	
 	LCD_RST_SET;
-	Delay_ms(50);
+	Delay_ms(5);
 }
 
 /*****************************************************************************
  * @name       :void LCD_RESET(void)
- * @date       :2018-08-09 
  * @function   :Initialization LCD screen
  * @parameters :None
  * @retvalue   :None
@@ -262,17 +245,16 @@ void LCD_Init(void)
 	LCD_WR_DATA(0x00);
 	LCD_WR_DATA(0xef);	 
 	LCD_WR_REG(0x11); //Exit Sleep
-	Delay_ms(120);
+	Delay_ms(24);
 	LCD_WR_REG(0x29); //display on
 
-  LCD_direction(USE_HORIZONTAL);//设置LCD显示方向
+  	LCD_Direction(USE_HORIZONTAL);//设置LCD显示方向
 	LCD_LED=1;//点亮背光	 
 	LCD_Clear(WHITE);//清全屏白色
 }
  
 /*****************************************************************************
  * @name       :void LCD_SetWindows(uint16_t xStar, uint16_t yStar,uint16_t xEnd,uint16_t yEnd)
- * @date       :2018-08-09 
  * @function   :Setting LCD display window
  * @parameters :xStar:the bebinning x coordinate of the LCD display window
 								yStar:the bebinning y coordinate of the LCD display window
@@ -282,13 +264,13 @@ void LCD_Init(void)
 ******************************************************************************/ 
 void LCD_SetWindows(uint16_t xStar, uint16_t yStar,uint16_t xEnd,uint16_t yEnd)
 {	
-	LCD_WR_REG(lcddev.setxcmd);	
+	LCD_WR_REG(lcddev.Set_x_Cmd);	
 	LCD_WR_DATA(xStar>>8);
 	LCD_WR_DATA(0x00FF&xStar);		
 	LCD_WR_DATA(xEnd>>8);
 	LCD_WR_DATA(0x00FF&xEnd);
 
-	LCD_WR_REG(lcddev.setycmd);	
+	LCD_WR_REG(lcddev.Set_y_Cmd);	
 	LCD_WR_DATA(yStar>>8);
 	LCD_WR_DATA(0x00FF&yStar);		
 	LCD_WR_DATA(yEnd>>8);
@@ -299,7 +281,6 @@ void LCD_SetWindows(uint16_t xStar, uint16_t yStar,uint16_t xEnd,uint16_t yEnd)
 
 /*****************************************************************************
  * @name       :void LCD_SetCursor(uint16_t Xpos, uint16_t Ypos)
- * @date       :2018-08-09 
  * @function   :Set coordinate value
  * @parameters :Xpos:the  x coordinate of the pixel
 								Ypos:the  y coordinate of the pixel
@@ -311,39 +292,38 @@ void LCD_SetCursor(uint16_t Xpos, uint16_t Ypos)
 } 
 
 /*****************************************************************************
- * @name       :void LCD_direction(uint8_t direction)
- * @date       :2018-08-09 
- * @function   :Setting the display direction of LCD screen
- * @parameters :direction:0-0 degree
+ * @name       :void LCD_Direction(uint8_t Direction)
+ * @function   :Setting the display Direction of LCD screen
+ * @parameters :Direction:0-0 degree
                           1-90 degree
 													2-180 degree
 													3-270 degree
  * @retvalue   :None
 ******************************************************************************/ 
-void LCD_direction(uint8_t direction)
+void LCD_Direction(uint8_t Direction)
 { 
-			lcddev.setxcmd=0x2A;
-			lcddev.setycmd=0x2B;
-			lcddev.wramcmd=0x2C;
-	switch(direction){		  
+			lcddev.Set_x_Cmd=0x2A;
+			lcddev.Set_y_Cmd=0x2B;
+			lcddev.Write_RAM_Cmd=0x2C;
+	switch(Direction){		  
 		case 0:						 	 		
-			lcddev.width=LCD_W;
-			lcddev.height=LCD_H;		
+			lcddev.Width=LCD_Width;
+			lcddev.Height=LCD_Height;		
 			LCD_WriteReg(0x36,(1<<3)|(0<<6)|(0<<7));//BGR==1,MY==0,MX==0,MV==0
 		break;
 		case 1:
-			lcddev.width=LCD_H;
-			lcddev.height=LCD_W;
+			lcddev.Width=LCD_Height;
+			lcddev.Height=LCD_Width;
 			LCD_WriteReg(0x36,(1<<3)|(0<<7)|(1<<6)|(1<<5));//BGR==1,MY==1,MX==0,MV==1
 		break;
 		case 2:						 	 		
-			lcddev.width=LCD_W;
-			lcddev.height=LCD_H;	
+			lcddev.Width=LCD_Width;
+			lcddev.Height=LCD_Height;	
 			LCD_WriteReg(0x36,(1<<3)|(1<<6)|(1<<7));//BGR==1,MY==0,MX==0,MV==0
 		break;
 		case 3:
-			lcddev.width=LCD_H;
-			lcddev.height=LCD_W;
+			lcddev.Width=LCD_Height;
+			lcddev.Height=LCD_Width;
 			LCD_WriteReg(0x36,(1<<3)|(1<<7)|(1<<5));//BGR==1,MY==1,MX==0,MV==1
 		break;	
 		default:break;
@@ -383,6 +363,7 @@ void LCD_direction(uint8_t direction)
 /*GUI
 ********************************************************************************************************
 */
+
 /*******************************************************************
  * @name       :void GUI_DrawPoint(uint16_t x,uint16_t y,uint16_t color)
  * @date       :2018-08-09 
@@ -412,15 +393,15 @@ void GUI_DrawPoint(uint16_t x,uint16_t y,uint16_t color)
 void LCD_Fill(uint16_t sx,uint16_t sy,uint16_t ex,uint16_t ey,uint16_t color)
 {  	
 	uint16_t i,j;			
-	uint16_t width=ex-sx+1; 		//得到填充的宽度
-	uint16_t height=ey-sy+1;		//高度
+	uint16_t Width=ex-sx+1; 		//得到填充的宽度
+	uint16_t Height=ey-sy+1;		//高度
 	LCD_SetWindows(sx,sy,ex,ey);//设置显示窗口
-	for(i=0;i<height;i++)
+	for(i=0;i<Height;i++)
 	{
-		for(j=0;j<width;j++)
+		for(j=0;j<Width;j++)
 		Lcd_WriteData_16Bit(color);	//写入数据 	 
 	}
-	LCD_SetWindows(0,0,lcddev.width-1,lcddev.height-1);//恢复窗口设置为全屏
+	LCD_SetWindows(0,0,lcddev.Width-1,lcddev.Height-1);//恢复窗口设置为全屏
 }
 
 /*******************************************************************
@@ -503,7 +484,7 @@ void LCD_DrawFillRectangle(uint16_t x1, uint16_t y1, uint16_t x2, uint16_t y2)
 }
  
 /*****************************************************************************
- * @name       :void _draw_circle_8(int xc, int yc, int x, int y, uint16_t c)
+ * @name       :void Draw_Circle_8(int xc, int yc, int x, int y, uint16_t c)
  * @date       :2018-08-09 
  * @function   :8 symmetry circle drawing algorithm (internal call)
  * @parameters :xc:the x coordinate of the Circular center 
@@ -513,7 +494,7 @@ void LCD_DrawFillRectangle(uint16_t x1, uint16_t y1, uint16_t x2, uint16_t y2)
 								c:the color value of the circle
  * @retvalue   :None
 ******************************************************************************/  
-void _draw_circle_8(int xc, int yc, int x, int y, uint16_t c)
+void Draw_Circle_8(int xc, int yc, int x, int y, uint16_t c)
 {
 	GUI_DrawPoint(xc + x, yc + y, c);
 
@@ -554,7 +535,7 @@ void gui_circle(int xc, int yc,uint16_t c,int r, int fill)
 		// 如果填充（画实心圆）
 		while (x <= y) {
 			for (yi = x; yi <= y; yi++)
-				_draw_circle_8(xc, yc, x, yi, c);
+				Draw_Circle_8(xc, yc, x, yi, c);
 
 			if (d < 0) {
 				d = d + 4 * x + 6;
@@ -568,7 +549,7 @@ void gui_circle(int xc, int yc,uint16_t c,int r, int fill)
 	{
 		// 如果不填充（画空心圆）
 		while (x <= y) {
-			_draw_circle_8(xc, yc, x, y, c);
+			Draw_Circle_8(xc, yc, x, y, c);
 			if (d < 0) {
 				d = d + 4 * x + 6;
 			} else {
@@ -756,7 +737,7 @@ void LCD_ShowChar(uint16_t x,uint16_t y,uint16_t fc, uint16_t bc, uint8_t Number
 		}
 	}
 	POINT_COLOR=colortemp;	
-	LCD_SetWindows(0,0,lcddev.width-1,lcddev.height-1);//恢复窗口为全屏    	   	 	  
+	LCD_SetWindows(0,0,lcddev.Width-1,lcddev.Height-1);//恢复窗口为全屏    	   	 	  
 }
 
 /*****************************************************************************
@@ -774,7 +755,7 @@ void LCD_ShowString(uint16_t x,uint16_t y,uint8_t Size,uint8_t *p,uint8_t mode)
 {         
     while((*p<='~')&&(*p>=' '))//判断是不是非法字符!
     {   
-		if(x>(lcddev.width-1)||y>(lcddev.height-1)) 
+		if(x>(lcddev.Width-1)||y>(lcddev.Height-1)) 
 		return;     
         LCD_ShowChar(x,y,POINT_COLOR,BACK_COLOR,*p,Size,mode);
         x+=Size/2;
@@ -957,7 +938,7 @@ void GUI_DrawFont16(uint16_t x, uint16_t y, uint16_t fc, uint16_t bc, uint8_t *s
 		continue;  //查找到对应点阵字库立即退出，防止多个汉字重复取模带来影响
 	}
 
-	LCD_SetWindows(0,0,lcddev.width-1,lcddev.height-1);//恢复窗口为全屏  
+	LCD_SetWindows(0,0,lcddev.Width-1,lcddev.Height-1);//恢复窗口为全屏  
 } 
 
 /*****************************************************************************
@@ -1013,7 +994,7 @@ void GUI_DrawFont24(uint16_t x, uint16_t y, uint16_t fc, uint16_t bc, uint8_t *s
 				continue;  //查找到对应点阵字库立即退出，防止多个汉字重复取模带来影响
 			}
 
-	LCD_SetWindows(0,0,lcddev.width-1,lcddev.height-1);//恢复窗口为全屏  
+	LCD_SetWindows(0,0,lcddev.Width-1,lcddev.Height-1);//恢复窗口为全屏  
 }
 
 /*****************************************************************************
@@ -1068,7 +1049,7 @@ void GUI_DrawFont32(uint16_t x, uint16_t y, uint16_t fc, uint16_t bc, uint8_t *s
 				continue;  //查找到对应点阵字库立即退出，防止多个汉字重复取模带来影响
 			}
 	
-	LCD_SetWindows(0,0,lcddev.width-1,lcddev.height-1);//恢复窗口为全屏  
+	LCD_SetWindows(0,0,lcddev.Width-1,lcddev.Height-1);//恢复窗口为全屏  
 } 
 
 /*****************************************************************************
@@ -1092,7 +1073,7 @@ void Show_Str(uint16_t x, uint16_t y, uint16_t fc, uint16_t bc, uint8_t *str,uin
     { 
         if(!bHz)
         {
-			if(x>(lcddev.width-Size/2)||y>(lcddev.height-Size)) 
+			if(x>(lcddev.Width-Size/2)||y>(lcddev.Height-Size)) 
 			return; 
 	        if(*str>0x80)bHz=1;//中文 
 	        else              //字符
@@ -1121,7 +1102,7 @@ void Show_Str(uint16_t x, uint16_t y, uint16_t fc, uint16_t bc, uint8_t *str,uin
 	        }
         }else//中文 
         {   
-			if(x>(lcddev.width-Size)||y>(lcddev.height-Size)) 
+			if(x>(lcddev.Width-Size)||y>(lcddev.Height-Size)) 
 			return;  
             bHz=0;//有汉字库    
 			if(Size==32)
@@ -1153,7 +1134,7 @@ void Show_Str(uint16_t x, uint16_t y, uint16_t fc, uint16_t bc, uint8_t *str,uin
 void Gui_StrCenter(uint16_t x, uint16_t y, uint16_t fc, uint16_t bc, uint8_t *str,uint8_t Size,uint8_t mode)
 {
 	uint16_t Length=strlen((const char *)str);
-	uint16_t x1=(lcddev.width-Length*8)/2;
+	uint16_t x1=(lcddev.Width-Length*8)/2;
 	Show_Str(x1,y,fc,bc,str,Size,mode);
 } 
  
@@ -1177,7 +1158,7 @@ void Gui_Drawbmp16(uint16_t x,uint16_t y,const unsigned char *p) //显示40*40 Q
 		picH=*(p+i*2+1);				
 		Lcd_WriteData_16Bit(picH<<8|picL);  						
 	}	
-	LCD_SetWindows(0,0,lcddev.width-1,lcddev.height-1);//恢复显示窗口为全屏	
+	LCD_SetWindows(0,0,lcddev.Width-1,lcddev.Height-1);//恢复显示窗口为全屏	
 }
 /*GUI
 ********************************************************************************************************

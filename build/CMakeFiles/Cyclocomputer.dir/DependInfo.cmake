@@ -28,7 +28,7 @@ set(CMAKE_AS_ARM_TARGET_INCLUDE_PATH
   "d:/OneDrive - email.szu.edu.cn/Codes/VS Code/Cyclocomputer/FreeRTOS/include"
   "d:/OneDrive - email.szu.edu.cn/Codes/VS Code/Cyclocomputer/FreeRTOS/portable/RVDS/ARM_CM3"
   "d:/OneDrive - email.szu.edu.cn/Codes/VS Code/Cyclocomputer/FreeRTOS"
-  "C:/Users/Wendo/AppData/Local/Arm/Packs/Keil/STM32F1xx_DFP/2.4.1/Device/Include"
+  "C:/Users/Wendo/AppData/Local/arm/packs/Keil/STM32F1xx_DFP/2.4.1/Device/Include"
   "d:/OneDrive - email.szu.edu.cn/Codes/VS Code/Cyclocomputer/Peripherals/Through_Beam_Sensor"
   "d:/OneDrive - email.szu.edu.cn/Codes/VS Code/Cyclocomputer/Peripherals/DC Motor"
   "d:/OneDrive - email.szu.edu.cn/Codes/VS Code/Cyclocomputer/Peripherals/Rotary Encoder"

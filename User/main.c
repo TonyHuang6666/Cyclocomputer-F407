@@ -12,9 +12,6 @@ int main(void)
 {
 	MPU6050_Init(); // 陀螺仪初始化
 	LCD_Init(); // 液晶屏初始化
-	ID=MPU6050_ReadID(); // 读取陀螺仪ID
-	LCD_Clear(WHITE);//清屏
-	LCD_ShowHexNumber(0,0,ID,DEFAULT_SIZE);//显示ID
 	while (1)
 	{
 		/*
@@ -29,13 +26,11 @@ int main(void)
 		Rotate_Test();
 		*/
 		MPU6050_GetData(&AccX,&AccY,&AccZ,&GyroX,&GyroY,&GyroZ);//读取陀螺仪数据
-		LCD_ShowNumber(50,120,AccX,5,DEFAULT_SIZE);//显示加速度计X轴数据
-		LCD_ShowNumber(100,140,AccY,5,DEFAULT_SIZE);//显示加速度计Y轴数据
-		LCD_ShowNumber(150,160,AccZ,5,DEFAULT_SIZE);//显示加速度计Z轴数据
-		/*
-		LCD_ShowNumber(140,120,GyroX,5,DEFAULT_SIZE);//显示陀螺仪X轴数据
-		LCD_ShowNumber(140,140,GyroY,5,DEFAULT_SIZE);//显示陀螺仪Y轴数据
-		LCD_ShowNumber(140,160,GyroZ,5,DEFAULT_SIZE);//显示陀螺仪Z轴数据
-		*/
+		LCD_ShowNumber(0,140,AccX,5,Default_Font_Size);//显示加速度计X轴数据
+		LCD_ShowNumber(0,158,AccY,5,Default_Font_Size);//显示加速度计Y轴数据
+		LCD_ShowNumber(0,176,AccZ,5,Default_Font_Size);//显示加速度计Z轴数据
+		LCD_ShowNumber(0,200,GyroX,5,Default_Font_Size);//显示陀螺仪X轴数据
+		LCD_ShowNumber(0,218,GyroY,5,Default_Font_Size);//显示陀螺仪Y轴数据
+		LCD_ShowNumber(0,236,GyroZ,5,Default_Font_Size);//显示陀螺仪Z轴数据
 	}
 }
