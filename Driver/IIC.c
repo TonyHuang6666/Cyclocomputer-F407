@@ -1,10 +1,13 @@
 #include "stm32f10x.h"
 #include "Delay.h"
+#include "IIC.h"
+
 #define Delay_Time 10
 //对于主频高的单片机，不建议使用宏定义
 
 void IIC_Initilize(void)
 {
+    /*软件实现
     //1.SCL和SDA线开漏输出模式
     RCC_APB2PeriphClockCmd(RCC_APB2Periph_GPIOB, ENABLE);
     GPIO_InitTypeDef GPIO_InitStructure;
@@ -14,6 +17,27 @@ void IIC_Initilize(void)
     GPIO_Init(GPIOB, &GPIO_InitStructure);
     //2.SCL和SDA都置高电平
     GPIO_SetBits(GPIOB, GPIO_Pin_10 | GPIO_Pin_11);//SCL和SDA都置高电平,IIC总线属于空闲状态
+    */
+    //硬件实现
+     //1.GPIO初始化
+    RCC_APB2PeriphClockCmd(I2C_GPIO_CLK,ENABLE);
+    GPIO_InitTypeDef GPIO_InitStructure;
+    GPIO_InitStructure.GPIO_Pin = I2C__SCL_PIN|I2C__SDA_PIN;
+    GPIO_InitStructure.GPIO_Mode = GPIO_Mode_AF_OD;//复用：引脚控制外设 开漏：IIC的时钟线是双向的
+    GPIO_InitStructure.GPIO_Speed = GPIO_Speed_50MHz;
+    GPIO_Init(I2C_GPIO_PORT,&GPIO_InitStructure);
+    //2.IIC初始化
+    RCC_APB1PeriphClockCmd(I2C_PORT_CLK,ENABLE);
+    I2C_InitTypeDef I2C_InitStructure;
+    I2C_StructInit(&I2C_InitStructure);
+    I2C_InitStructure.I2C_Mode = I2C_Mode_I2C;//I2C模式
+    I2C_InitStructure.I2C_Ack = I2C_Ack_Enable;//使能应答
+    I2C_InitStructure.I2C_AcknowledgedAddress = I2C_AcknowledgedAddress_7bit;//stm32作为从机模式时7位地址
+    I2C_InitStructure.I2C_ClockSpeed = 50000;//50KHz
+    I2C_InitStructure.I2C_DutyCycle = I2C_DutyCycle_2;//低于100KHz的标准速度此参数无意义，高速时要增大低电平占比
+    I2C_InitStructure.I2C_OwnAddress1 = 0x00;//stm32作为从机模式时的自身地址
+    I2C_Init(I2C_PORT,&I2C_InitStructure);
+    I2C_Cmd(I2C_PORT, ENABLE);
 }
 
 //以下四个函数为对引脚操作的封装和改名，方便移植

@@ -41,17 +41,17 @@ void SPI_Initilize(void)
     RCC_APB2PeriphClockCmd(SPI_GPIO_CLK, ENABLE);//使能GPIOA时钟
     GPIO_InitTypeDef GPIO_InitStructure;
 
-    GPIO_InitStructure.GPIO_Pin =SPI_SCK | SPI_MOSI;
+    GPIO_InitStructure.GPIO_Pin =SPI_SCK_PIN | SPI_MOSI_PIN;
     GPIO_InitStructure.GPIO_Mode = GPIO_Mode_AF_PP;//复用推挽输出
     GPIO_InitStructure.GPIO_Speed = GPIO_Speed_50MHz;//50MHz
     GPIO_Init(SPI_GPIO_PORT, &GPIO_InitStructure);//初始化GPIOA
 
-    GPIO_InitStructure.GPIO_Pin = SPI_CS; 
+    GPIO_InitStructure.GPIO_Pin = SPI_CS_PIN; 
     GPIO_InitStructure.GPIO_Mode = GPIO_Mode_Out_PP;//通用推挽输出
     GPIO_InitStructure.GPIO_Speed = GPIO_Speed_50MHz;//50MHz
     GPIO_Init(SPI_GPIO_PORT, &GPIO_InitStructure);//初始化GPIOA
 
-    GPIO_InitStructure.GPIO_Pin = SPI_MISO;
+    GPIO_InitStructure.GPIO_Pin = SPI_MISO_PIN;
     GPIO_InitStructure.GPIO_Mode = GPIO_Mode_IPU;//上拉输入
     GPIO_InitStructure.GPIO_Speed = GPIO_Speed_50MHz;//50MHz
     GPIO_Init(SPI_GPIO_PORT, &GPIO_InitStructure);//初始化GPIOA
@@ -129,6 +129,8 @@ uint8_t SPI_ExchangeByte(uint8_t TxData)//硬件交换一个字长数据；连�
     SPI_I2S_SendData(SPI_PORT, TxData);//发送数据
     while(SPI_I2S_GetFlagStatus(SPI_PORT,SPI_I2S_FLAG_RXNE) != SET);//等待接收缓冲区非空。要想接收必须得先发送
     return SPI_I2S_ReceiveData(SPI_PORT);//读取数据
+
+    //硬件实现，连续传输
 }
 
 /*
