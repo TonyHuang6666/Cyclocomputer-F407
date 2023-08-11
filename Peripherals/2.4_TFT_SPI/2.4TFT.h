@@ -11,22 +11,24 @@ extern uint16_t BACK_COLOR;	 // 画笔颜色：背景颜色默认为白色
 ********************************************************************************************************
 */
 // LCD端口定义
-#define LED 9	  // 背光控制引脚        PB9
-#define LCD_CS 11 // 片选引脚            PB11
-#define LCD_RS 10 // 寄存器/数据选择引脚 PB10
-#define LCD_RST 4 // 复位引脚            PA4
-
+#define LED 2	  // 背光控制引脚        PA2
+#define LCD_LED   GPIO_Pin_2
 // 采用了三极管控制背光亮灭，也可以接PWM调节背光亮度
-#define LCD_LED PBout(LED) // LCD背光    		 PB9
+#define LCD_LED PAout(LED) // LCD背光    		 PA2
 
+// 修改为STM32F407VGT6的引脚配置
+#define LCD_CS    GPIO_Pin_4  // 片选端口 PA4
+#define LCD_RS    GPIO_Pin_1  // 数据/命令 PA1
+#define LCD_RST   GPIO_Pin_0   // 复位 PA0
 // GPIO置位（拉高）
-#define LCD_CS_SET GPIOB->BSRR = 1 << LCD_CS   // 片选端口    PB11
-#define LCD_RS_SET GPIOB->BSRR = 1 << LCD_RS   // 数据/命令   PB10
-#define LCD_RST_SET GPIOA->BSRR = 1 << LCD_RST // 复位		  PA4
+#define LCD_CS_SET  GPIOA->BSRR = LCD_CS
+#define LCD_RS_SET  GPIOA->BSRR = LCD_RS
+#define LCD_RST_SET GPIOA->BSRR = LCD_RST
 // GPIO复位（拉低）
-#define LCD_CS_CLR GPIOB->BRR = 1 << LCD_CS	  // 片选端口   PB11
-#define LCD_RS_CLR GPIOB->BRR = 1 << LCD_RS	  // 数据/命令  PB10
-#define LCD_RST_CLR GPIOA->BRR = 1 << LCD_RST // 复位		PA4
+#define LCD_CS_CLR  GPIOA->BSRR = (LCD_CS << 16)
+#define LCD_RS_CLR  GPIOA->BSRR = (LCD_RS << 16)
+#define LCD_RST_CLR GPIOA->BSRR = (LCD_RST << 16)
+
 typedef struct
 {
 	uint16_t Width;			// LCD 宽度

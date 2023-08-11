@@ -1,4 +1,4 @@
-#include "stm32f10x.h"                  // Device header
+#include "stm32f4xx.h"                  // Device header
 //extern uint16_t Number;
 /*
     void TIM_DeInit(TIM_TypeDef* TIMx);//将TIMx寄存器恢复到缺省值

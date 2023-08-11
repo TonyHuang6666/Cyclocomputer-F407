@@ -1,4 +1,0 @@
-D:/OneDrive - email.szu.edu.cn/Codes/VS Code/Cyclocomputer/build/CMakeFiles/database.dir
-D:/OneDrive - email.szu.edu.cn/Codes/VS Code/Cyclocomputer/build/CMakeFiles/Cyclocomputer.dir
-D:/OneDrive - email.szu.edu.cn/Codes/VS Code/Cyclocomputer/build/CMakeFiles/edit_cache.dir
-D:/OneDrive - email.szu.edu.cn/Codes/VS Code/Cyclocomputer/build/CMakeFiles/rebuild_cache.dir

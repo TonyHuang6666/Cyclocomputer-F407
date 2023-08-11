@@ -1,0 +1,58 @@
+solution:
+  created-by: uv2csolution@1.0.0
+  created-for: CMSIS-Toolbox@2.0.0
+  packs:
+    - pack: Keil::STM32F4xx_DFP
+  target-types:
+    - type: Target_1
+      device: STM32F407VGTx
+      processor:
+        trustzone: non-secure
+      compiler: AC6
+      add-path:
+        - Driver
+        - Peripherals
+        - System
+        - User
+        - Peripherals/0.96_OLED_IIC
+        - Peripherals/LED
+        - Peripherals/MPU6050
+        - Peripherals/W25Q64
+        - Peripherals/2.4_TFT_SPI
+        - Peripherals/Key
+        - FreeRTOS/include
+        - FreeRTOS/portable/GCC/ARM_CM4F
+        - FreeRTOS
+        - CMSIS
+        - STM32F4xx_StdPeriph_Driver
+      debug: "on"
+      define:
+        - USE_STDPERIPH_DRIVER
+        - STM32F40_41xxx
+      misc:
+        - C-CPP:
+            - -fno-rtti
+            - -funsigned-char
+            - -fshort-enums
+            - -fshort-wchar
+            - -ffunction-sections
+            - -std=c11
+            - -w
+          ASM:
+            - -masm=auto
+          Link:
+            - --map
+            - --load_addr_map_info
+            - --xref
+            - --callgraph
+            - --symbols
+            - --info sizes
+            - --info totals
+            - --info unused
+            - --info veneers
+            - --list
+            - --strict
+            - --summary_stderr
+            - --info summarysizes
+  projects:
+    - project: Cyclocomputer-F407.cproject.yaml

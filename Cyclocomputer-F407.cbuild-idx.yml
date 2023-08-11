@@ -1,0 +1,9 @@
+build-idx:
+  generated-by: csolution version 2.0.0
+  csolution: Cyclocomputer-F407.csolution.yaml
+  cprojects:
+    - cproject: Cyclocomputer-F407.cproject.yaml
+  cbuilds:
+    - cbuild: Cyclocomputer-F407+Target_1.cbuild.yml
+      project: Cyclocomputer-F407
+      configuration: +Target_1

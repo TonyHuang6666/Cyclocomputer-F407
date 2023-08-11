@@ -1,4 +1,4 @@
-#include "stm32f10x.h"                  // Device header
+#include "stm32f4xx.h"                  // Device header
 
 /*
 写初始化函数：

@@ -1,4 +1,4 @@
-#include "stm32f10x.h"
+#include "stm32f4xx.h"
 //配置输入捕获单元
 void IC_Init(void)
 {

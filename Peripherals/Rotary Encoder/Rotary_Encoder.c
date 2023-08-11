@@ -1,4 +1,4 @@
-#include "stm32f10x.h"                  // Device header
+#include "stm32f4xx.h"                  // Device header
 int16_t Encoder_Count,Flag=0;
 /*
 写初始化函数：

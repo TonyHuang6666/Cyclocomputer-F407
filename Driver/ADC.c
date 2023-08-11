@@ -1,4 +1,4 @@
-#include "stm32f10x.h"
+#include "stm32f4xx.h"
 void ADC_Initilize(void)
 {
     // 1.使能时钟

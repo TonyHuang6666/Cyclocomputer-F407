@@ -1,4 +1,4 @@
-#include "stm32f10x.h"
+#include "stm32f4xx.h"
 uint16_t AD_Value[4];
 void DMA_Initilize(void)
 {
