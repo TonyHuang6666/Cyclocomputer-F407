@@ -1,4 +1,0 @@
-D:/OneDrive - email.szu.edu.cn/Codes/VS Code/Cyclocomputer-F407VG/tmp/Cyclocomputer-F407/Target_1/CMakeFiles/database.dir
-D:/OneDrive - email.szu.edu.cn/Codes/VS Code/Cyclocomputer-F407VG/tmp/Cyclocomputer-F407/Target_1/CMakeFiles/Cyclocomputer-F407.dir
-D:/OneDrive - email.szu.edu.cn/Codes/VS Code/Cyclocomputer-F407VG/tmp/Cyclocomputer-F407/Target_1/CMakeFiles/edit_cache.dir
-D:/OneDrive - email.szu.edu.cn/Codes/VS Code/Cyclocomputer-F407VG/tmp/Cyclocomputer-F407/Target_1/CMakeFiles/rebuild_cache.dir

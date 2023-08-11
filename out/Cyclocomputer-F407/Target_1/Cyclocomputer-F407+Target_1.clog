@@ -1,8 +1,0 @@
-# CMSIS Build Audit File generated on 2023-08-11T22:11:54
-
-# Project Description File: d:/OneDrive - email.szu.edu.cn/Codes/VS Code/Cyclocomputer-F407VG/Cyclocomputer-F407+Target_1.cprj
-
-# Toolchain Configuration File: C:/Users/Wendo/.vcpkg/artifacts/fd3d78d7/tools.open.cmsis.pack.cmsis.toolbox/2.0.0/etc/AC6.6.18.0.cmake
-
-# Package: Keil.STM32F4xx_DFP.2.17.1
-  Location: C:\Users\Wendo\AppData\Local\Arm\Packs/Keil/STM32F4xx_DFP/2.17.1/

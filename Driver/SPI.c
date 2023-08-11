@@ -31,7 +31,6 @@ void SPI_Initilize(void)
     //1.初始化GPIO配置
     RCC_AHB1PeriphClockCmd(SPI_GPIO_CLK, ENABLE);//使能GPIOA时钟
     GPIO_InitTypeDef GPIO_InitStructure;
-
     GPIO_InitStructure.GPIO_Pin =SPI_SCK_PIN | SPI_MOSI_PIN;
     GPIO_InitStructure.GPIO_Mode = GPIO_Mode_AF;//复用功能
     GPIO_InitStructure.GPIO_Speed = GPIO_Speed_100MHz;//100MHz
