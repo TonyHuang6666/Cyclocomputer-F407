@@ -122,7 +122,7 @@ void LCD_GPIOInit(void)
 	 GPIO_InitTypeDef GPIO_InitStructure;
 	 RCC_AHB1PeriphClockCmd(RCC_AHB1Periph_GPIOA, ENABLE);
 	 GPIO_InitStructure.GPIO_Pin = LCD_LED_Pin | LCD_RS_Pin | LCD_RST_Pin; //
-	 GPIO_InitStructure.GPIO_Speed = GPIO_High_Speed;
+	 GPIO_InitStructure.GPIO_Speed = GPIO_SpeedRate;
 	 GPIO_InitStructure.GPIO_OType = GPIO_OType_PP;
 	 GPIO_InitStructure.GPIO_Mode = GPIO_Mode_OUT;
 	 GPIO_InitStructure.GPIO_PuPd = GPIO_PuPd_UP;
@@ -245,12 +245,11 @@ void LCD_Init(void)
 	LCD_WR_DATA(0x00);
 	LCD_WR_DATA(0xef);	 
 	LCD_WR_REG(0x11); //Exit Sleep
-	Delay_ms(24);
+	Delay_ms(5);
 	LCD_WR_REG(0x29); //display on
-
   	LCD_Direction(USE_HORIZONTAL);//设置LCD显示方向
-	GPIO_WriteBit(GPIOA,LCD_LED_Pin,Bit_SET);//点亮背光	 
-	LCD_Clear(BLUE);//清全屏白色
+	LCD_LED;//点亮背光	 
+	LCD_Clear(WHITE);//清全屏白色
 }
  
 /*****************************************************************************

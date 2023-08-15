@@ -36,4 +36,5 @@
   FreeRTOS\portable\GCC\ARM_CM4F\portmacro.h \
   FreeRTOS\include\mpu_wrappers.h System\Delay.h System\sys.h \
   Peripherals\2.4_TFT_SPI\2.4TFT.h \
-  D:\Softwares\Keil\ARM\ARMCLANG\Bin\..\include\string.h Driver\SPI.h
+  D:\Softwares\Keil\ARM\ARMCLANG\Bin\..\include\string.h Driver\SPI.h \
+  Peripherals\2.4_TFT_SPI\test.h

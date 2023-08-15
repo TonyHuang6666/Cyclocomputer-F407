@@ -186,7 +186,7 @@ void Delay_us(uint32_t nus)
 //对168M条件下,nms<=798ms 
 void Delay_xms(uint16_t nms)
 {
-	Delay_init(168);	 		  	  
+		 		  	  
 	u32 temp;		   
 	SysTick->LOAD=(u32)nms*fac_ms;			//时间加载(SysTick->LOAD为24bit)
 	SysTick->VAL =0x00;           			//清空计数器

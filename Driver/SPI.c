@@ -48,7 +48,7 @@ void SPI_Initilize(void)
     GPIO_PinAFConfig(SPI_GPIO_PORT, GPIO_PinSource5, GPIO_AF_SPI1);//SCK引脚复用为SPI1
     GPIO_PinAFConfig(SPI_GPIO_PORT, GPIO_PinSource6, GPIO_AF_SPI1);//MISO引脚复用为SPI1
     GPIO_PinAFConfig(SPI_GPIO_PORT, GPIO_PinSource7, GPIO_AF_SPI1);//MOSI引脚复用为SPI1
-   
+    
     //2.初始化SPI配置
     RCC_APB2PeriphClockCmd(SPI_PORT_CLK, ENABLE);//使能SPI时钟
     SPI_InitTypeDef SPI_InitStructure;

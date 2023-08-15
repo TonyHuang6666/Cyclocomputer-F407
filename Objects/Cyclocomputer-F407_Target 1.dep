@@ -1,7 +1,7 @@
 Dependencies for Project 'Cyclocomputer-F407', Target 'Target 1': (DO NOT MODIFY !)
 CompilerVersion: 6190000::V6.19::ARMCLANG
-F (.\Driver\SPI.c)(0x64DB34B2)(-xc -std=c11 --target=arm-arm-none-eabi -mcpu=cortex-m4 -mfpu=fpv4-sp-d16 -mfloat-abi=hard -c-fno-rtti -funsigned-char -fshort-enums -fshort-wchar-gdwarf-4 -ffunction-sections -w -I ./Driver -I ./Peripherals -I ./System -I ./User -I ./Peripherals/0.96_OLED_IIC -I ./Peripherals/LED -I ./Peripherals/MPU6050 -I ./Peripherals/W25Q64 -I ./Peripherals/2.4_TFT_SPI -I ./Peripherals/Key -I ./FreeRTOS/include -I ./FreeRTOS/portable/GCC/ARM_CM4F -I ./FreeRTOS -I ./CMSIS -I ./STM32F4xx_StdPeriph_Driver-I"D:/Data_of_Softwares/keil packs/Keil/STM32F4xx_DFP/2.17.1/Drivers/CMSIS/Device/ST/STM32F4xx/Include"-D__UVISION_VERSION="538" -DSTM32F407xx -DUSE_STDPERIPH_DRIVER -DSTM32F40_41xxx-o ./objects/spi.o -MD)
-I (Driver\SPI.h)(0x64DB26E4)
+F (.\Driver\SPI.c)(0x64DB4FE9)(-xc -std=c11 --target=arm-arm-none-eabi -mcpu=cortex-m4 -mfpu=fpv4-sp-d16 -mfloat-abi=hard -c-fno-rtti -funsigned-char -fshort-enums -fshort-wchar-gdwarf-4 -ffunction-sections -w -I ./Driver -I ./Peripherals -I ./System -I ./User -I ./Peripherals/0.96_OLED_IIC -I ./Peripherals/LED -I ./Peripherals/MPU6050 -I ./Peripherals/W25Q64 -I ./Peripherals/2.4_TFT_SPI -I ./Peripherals/Key -I ./FreeRTOS/include -I ./FreeRTOS/portable/GCC/ARM_CM4F -I ./FreeRTOS -I ./CMSIS -I ./STM32F4xx_StdPeriph_Driver-I"D:/Data_of_Softwares/keil packs/Keil/STM32F4xx_DFP/2.17.1/Drivers/CMSIS/Device/ST/STM32F4xx/Include"-D__UVISION_VERSION="538" -DSTM32F407xx -DUSE_STDPERIPH_DRIVER -DSTM32F40_41xxx-o ./objects/spi.o -MD)
+I (Driver\SPI.h)(0x64DB4F93)
 I (User\stm32f4xx_conf.h)(0x64DB16B0)
 I (STM32F4xx_StdPeriph_Driver\stm32f4xx_adc.h)(0x61F25A2D)
 I (CMSIS\stm32f4xx.h)(0x64DB0EFF)
@@ -36,8 +36,8 @@ I (STM32F4xx_StdPeriph_Driver\stm32f4xx_can.h)(0x61F25A2E)
 I (STM32F4xx_StdPeriph_Driver\stm32f4xx_dac.h)(0x61F25A30)
 I (STM32F4xx_StdPeriph_Driver\stm32f4xx_dcmi.h)(0x61F25A31)
 I (STM32F4xx_StdPeriph_Driver\stm32f4xx_fsmc.h)(0x61F25A36)
-F (.\Driver\SPI.h)(0x64DB26E4)()
-F (.\Peripherals\2.4_TFT_SPI\2.4TFT.c)(0x64DB4038)(-xc -std=c11 --target=arm-arm-none-eabi -mcpu=cortex-m4 -mfpu=fpv4-sp-d16 -mfloat-abi=hard -c-fno-rtti -funsigned-char -fshort-enums -fshort-wchar-gdwarf-4 -ffunction-sections -w -I ./Driver -I ./Peripherals -I ./System -I ./User -I ./Peripherals/0.96_OLED_IIC -I ./Peripherals/LED -I ./Peripherals/MPU6050 -I ./Peripherals/W25Q64 -I ./Peripherals/2.4_TFT_SPI -I ./Peripherals/Key -I ./FreeRTOS/include -I ./FreeRTOS/portable/GCC/ARM_CM4F -I ./FreeRTOS -I ./CMSIS -I ./STM32F4xx_StdPeriph_Driver-I"D:/Data_of_Softwares/keil packs/Keil/STM32F4xx_DFP/2.17.1/Drivers/CMSIS/Device/ST/STM32F4xx/Include"-D__UVISION_VERSION="538" -DSTM32F407xx -DUSE_STDPERIPH_DRIVER -DSTM32F40_41xxx-o ./objects/2.4tft.o -MD)
+F (.\Driver\SPI.h)(0x64DB4F93)()
+F (.\Peripherals\2.4_TFT_SPI\2.4TFT.c)(0x64DB4F22)(-xc -std=c11 --target=arm-arm-none-eabi -mcpu=cortex-m4 -mfpu=fpv4-sp-d16 -mfloat-abi=hard -c-fno-rtti -funsigned-char -fshort-enums -fshort-wchar-gdwarf-4 -ffunction-sections -w -I ./Driver -I ./Peripherals -I ./System -I ./User -I ./Peripherals/0.96_OLED_IIC -I ./Peripherals/LED -I ./Peripherals/MPU6050 -I ./Peripherals/W25Q64 -I ./Peripherals/2.4_TFT_SPI -I ./Peripherals/Key -I ./FreeRTOS/include -I ./FreeRTOS/portable/GCC/ARM_CM4F -I ./FreeRTOS -I ./CMSIS -I ./STM32F4xx_StdPeriph_Driver-I"D:/Data_of_Softwares/keil packs/Keil/STM32F4xx_DFP/2.17.1/Drivers/CMSIS/Device/ST/STM32F4xx/Include"-D__UVISION_VERSION="538" -DSTM32F407xx -DUSE_STDPERIPH_DRIVER -DSTM32F40_41xxx-o ./objects/2.4tft.o -MD)
 I (User\stm32f4xx_conf.h)(0x64DB16B0)
 I (STM32F4xx_StdPeriph_Driver\stm32f4xx_adc.h)(0x61F25A2D)
 I (CMSIS\stm32f4xx.h)(0x64DB0EFF)
@@ -72,17 +72,17 @@ I (STM32F4xx_StdPeriph_Driver\stm32f4xx_can.h)(0x61F25A2E)
 I (STM32F4xx_StdPeriph_Driver\stm32f4xx_dac.h)(0x61F25A30)
 I (STM32F4xx_StdPeriph_Driver\stm32f4xx_dcmi.h)(0x61F25A31)
 I (STM32F4xx_StdPeriph_Driver\stm32f4xx_fsmc.h)(0x61F25A36)
-I (Peripherals\2.4_TFT_SPI\2.4TFT.h)(0x64DB396F)
+I (Peripherals\2.4_TFT_SPI\2.4TFT.h)(0x64DB4A60)
 I (System\sys.h)(0x64D629ED)
 I (System\Delay.h)(0x64DB4861)
 I (D:\Softwares\Keil\ARM\ARMCLANG\include\string.h)(0x63884908)
-I (Driver\SPI.h)(0x64DB26E4)
+I (Driver\SPI.h)(0x64DB4F93)
 I (Peripherals\2.4_TFT_SPI\font.h)(0x64D1E9C7)
-F (.\Peripherals\2.4_TFT_SPI\2.4TFT.h)(0x64DB396F)()
+F (.\Peripherals\2.4_TFT_SPI\2.4TFT.h)(0x64DB4A60)()
 F (.\Peripherals\2.4_TFT_SPI\FONT.H)(0x64D1E9C7)()
 F (.\Peripherals\2.4_TFT_SPI\pic.h)(0x64D1E46F)()
 F (.\Peripherals\2.4_TFT_SPI\test.c)(0x64D48E59)(-xc -std=c11 --target=arm-arm-none-eabi -mcpu=cortex-m4 -mfpu=fpv4-sp-d16 -mfloat-abi=hard -c-fno-rtti -funsigned-char -fshort-enums -fshort-wchar-gdwarf-4 -ffunction-sections -w -I ./Driver -I ./Peripherals -I ./System -I ./User -I ./Peripherals/0.96_OLED_IIC -I ./Peripherals/LED -I ./Peripherals/MPU6050 -I ./Peripherals/W25Q64 -I ./Peripherals/2.4_TFT_SPI -I ./Peripherals/Key -I ./FreeRTOS/include -I ./FreeRTOS/portable/GCC/ARM_CM4F -I ./FreeRTOS -I ./CMSIS -I ./STM32F4xx_StdPeriph_Driver-I"D:/Data_of_Softwares/keil packs/Keil/STM32F4xx_DFP/2.17.1/Drivers/CMSIS/Device/ST/STM32F4xx/Include"-D__UVISION_VERSION="538" -DSTM32F407xx -DUSE_STDPERIPH_DRIVER -DSTM32F40_41xxx-o ./objects/test.o -MD)
-I (Peripherals\2.4_TFT_SPI\2.4TFT.h)(0x64DB396F)
+I (Peripherals\2.4_TFT_SPI\2.4TFT.h)(0x64DB4A60)
 I (System\sys.h)(0x64D629ED)
 I (CMSIS\stm32f4xx.h)(0x64DB0EFF)
 I (CMSIS\core_cm4.h)(0x61F12857)
@@ -120,11 +120,11 @@ I (STM32F4xx_StdPeriph_Driver\stm32f4xx_dcmi.h)(0x61F25A31)
 I (STM32F4xx_StdPeriph_Driver\stm32f4xx_fsmc.h)(0x61F25A36)
 I (System\Delay.h)(0x64DB4861)
 I (D:\Softwares\Keil\ARM\ARMCLANG\include\string.h)(0x63884908)
-I (Driver\SPI.h)(0x64DB26E4)
+I (Driver\SPI.h)(0x64DB4F93)
 I (Peripherals\Key\Key.h)(0x64D10B85)
 I (Peripherals\2.4_TFT_SPI\pic.h)(0x64D1E46F)
-F (.\Peripherals\2.4_TFT_SPI\test.h)(0x64D13A3F)()
-F (.\System\Delay.c)(0x64DB48E8)(-xc -std=c11 --target=arm-arm-none-eabi -mcpu=cortex-m4 -mfpu=fpv4-sp-d16 -mfloat-abi=hard -c-fno-rtti -funsigned-char -fshort-enums -fshort-wchar-gdwarf-4 -ffunction-sections -w -I ./Driver -I ./Peripherals -I ./System -I ./User -I ./Peripherals/0.96_OLED_IIC -I ./Peripherals/LED -I ./Peripherals/MPU6050 -I ./Peripherals/W25Q64 -I ./Peripherals/2.4_TFT_SPI -I ./Peripherals/Key -I ./FreeRTOS/include -I ./FreeRTOS/portable/GCC/ARM_CM4F -I ./FreeRTOS -I ./CMSIS -I ./STM32F4xx_StdPeriph_Driver-I"D:/Data_of_Softwares/keil packs/Keil/STM32F4xx_DFP/2.17.1/Drivers/CMSIS/Device/ST/STM32F4xx/Include"-D__UVISION_VERSION="538" -DSTM32F407xx -DUSE_STDPERIPH_DRIVER -DSTM32F40_41xxx-o ./objects/delay.o -MD)
+F (.\Peripherals\2.4_TFT_SPI\test.h)(0x64DB4D74)()
+F (.\System\Delay.c)(0x64DB4CDA)(-xc -std=c11 --target=arm-arm-none-eabi -mcpu=cortex-m4 -mfpu=fpv4-sp-d16 -mfloat-abi=hard -c-fno-rtti -funsigned-char -fshort-enums -fshort-wchar-gdwarf-4 -ffunction-sections -w -I ./Driver -I ./Peripherals -I ./System -I ./User -I ./Peripherals/0.96_OLED_IIC -I ./Peripherals/LED -I ./Peripherals/MPU6050 -I ./Peripherals/W25Q64 -I ./Peripherals/2.4_TFT_SPI -I ./Peripherals/Key -I ./FreeRTOS/include -I ./FreeRTOS/portable/GCC/ARM_CM4F -I ./FreeRTOS -I ./CMSIS -I ./STM32F4xx_StdPeriph_Driver-I"D:/Data_of_Softwares/keil packs/Keil/STM32F4xx_DFP/2.17.1/Drivers/CMSIS/Device/ST/STM32F4xx/Include"-D__UVISION_VERSION="538" -DSTM32F407xx -DUSE_STDPERIPH_DRIVER -DSTM32F40_41xxx-o ./objects/delay.o -MD)
 I (System\Delay.h)(0x64DB4861)
 I (System\sys.h)(0x64D629ED)
 I (CMSIS\stm32f4xx.h)(0x64DB0EFF)
@@ -1886,8 +1886,8 @@ I (STM32F4xx_StdPeriph_Driver\stm32f4xx_dac.h)(0x61F25A30)
 I (STM32F4xx_StdPeriph_Driver\stm32f4xx_dcmi.h)(0x61F25A31)
 I (STM32F4xx_StdPeriph_Driver\stm32f4xx_fsmc.h)(0x61F25A36)
 F (.\STM32F4xx_StdPeriph_Driver\stm32f4xx_wwdg.h)(0x61F25A3F)()
-F (.\User\main.c)(0x64DB491A)(-xc -std=c11 --target=arm-arm-none-eabi -mcpu=cortex-m4 -mfpu=fpv4-sp-d16 -mfloat-abi=hard -c-fno-rtti -funsigned-char -fshort-enums -fshort-wchar-gdwarf-4 -ffunction-sections -w -I ./Driver -I ./Peripherals -I ./System -I ./User -I ./Peripherals/0.96_OLED_IIC -I ./Peripherals/LED -I ./Peripherals/MPU6050 -I ./Peripherals/W25Q64 -I ./Peripherals/2.4_TFT_SPI -I ./Peripherals/Key -I ./FreeRTOS/include -I ./FreeRTOS/portable/GCC/ARM_CM4F -I ./FreeRTOS -I ./CMSIS -I ./STM32F4xx_StdPeriph_Driver-I"D:/Data_of_Softwares/keil packs/Keil/STM32F4xx_DFP/2.17.1/Drivers/CMSIS/Device/ST/STM32F4xx/Include"-D__UVISION_VERSION="538" -DSTM32F407xx -DUSE_STDPERIPH_DRIVER -DSTM32F40_41xxx-o ./objects/main.o -MD)
-I (User\main.h)(0x64DB1D9A)
+F (.\User\main.c)(0x64DB4E7F)(-xc -std=c11 --target=arm-arm-none-eabi -mcpu=cortex-m4 -mfpu=fpv4-sp-d16 -mfloat-abi=hard -c-fno-rtti -funsigned-char -fshort-enums -fshort-wchar-gdwarf-4 -ffunction-sections -w -I ./Driver -I ./Peripherals -I ./System -I ./User -I ./Peripherals/0.96_OLED_IIC -I ./Peripherals/LED -I ./Peripherals/MPU6050 -I ./Peripherals/W25Q64 -I ./Peripherals/2.4_TFT_SPI -I ./Peripherals/Key -I ./FreeRTOS/include -I ./FreeRTOS/portable/GCC/ARM_CM4F -I ./FreeRTOS -I ./CMSIS -I ./STM32F4xx_StdPeriph_Driver-I"D:/Data_of_Softwares/keil packs/Keil/STM32F4xx_DFP/2.17.1/Drivers/CMSIS/Device/ST/STM32F4xx/Include"-D__UVISION_VERSION="538" -DSTM32F407xx -DUSE_STDPERIPH_DRIVER -DSTM32F40_41xxx-o ./objects/main.o -MD)
+I (User\main.h)(0x64DB4DC7)
 I (User\stm32f4xx_conf.h)(0x64DB16B0)
 I (STM32F4xx_StdPeriph_Driver\stm32f4xx_adc.h)(0x61F25A2D)
 I (CMSIS\stm32f4xx.h)(0x64DB0EFF)
@@ -1932,10 +1932,11 @@ I (FreeRTOS\portable\GCC\ARM_CM4F\portmacro.h)(0x64D1E542)
 I (FreeRTOS\include\mpu_wrappers.h)(0x64020E50)
 I (System\Delay.h)(0x64DB4861)
 I (System\sys.h)(0x64D629ED)
-I (Peripherals\2.4_TFT_SPI\2.4TFT.h)(0x64DB396F)
+I (Peripherals\2.4_TFT_SPI\2.4TFT.h)(0x64DB4A60)
 I (D:\Softwares\Keil\ARM\ARMCLANG\include\string.h)(0x63884908)
-I (Driver\SPI.h)(0x64DB26E4)
-F (.\User\main.h)(0x64DB1D9A)()
+I (Driver\SPI.h)(0x64DB4F93)
+I (Peripherals\2.4_TFT_SPI\test.h)(0x64DB4D74)
+F (.\User\main.h)(0x64DB4DC7)()
 F (.\User\stm32f4xx_conf.h)(0x64DB16B0)()
 F (.\User\stm32f4xx_it.c)(0x64D5F246)(-xc -std=c11 --target=arm-arm-none-eabi -mcpu=cortex-m4 -mfpu=fpv4-sp-d16 -mfloat-abi=hard -c-fno-rtti -funsigned-char -fshort-enums -fshort-wchar-gdwarf-4 -ffunction-sections -w -I ./Driver -I ./Peripherals -I ./System -I ./User -I ./Peripherals/0.96_OLED_IIC -I ./Peripherals/LED -I ./Peripherals/MPU6050 -I ./Peripherals/W25Q64 -I ./Peripherals/2.4_TFT_SPI -I ./Peripherals/Key -I ./FreeRTOS/include -I ./FreeRTOS/portable/GCC/ARM_CM4F -I ./FreeRTOS -I ./CMSIS -I ./STM32F4xx_StdPeriph_Driver-I"D:/Data_of_Softwares/keil packs/Keil/STM32F4xx_DFP/2.17.1/Drivers/CMSIS/Device/ST/STM32F4xx/Include"-D__UVISION_VERSION="538" -DSTM32F407xx -DUSE_STDPERIPH_DRIVER -DSTM32F40_41xxx-o ./objects/stm32f4xx_it.o -MD)
 I (User\stm32f4xx_it.h)(0x64D5F246)
@@ -1973,7 +1974,7 @@ I (STM32F4xx_StdPeriph_Driver\stm32f4xx_can.h)(0x61F25A2E)
 I (STM32F4xx_StdPeriph_Driver\stm32f4xx_dac.h)(0x61F25A30)
 I (STM32F4xx_StdPeriph_Driver\stm32f4xx_dcmi.h)(0x61F25A31)
 I (STM32F4xx_StdPeriph_Driver\stm32f4xx_fsmc.h)(0x61F25A36)
-I (User\main.h)(0x64DB1D9A)
+I (User\main.h)(0x64DB4DC7)
 I (FreeRTOS\include\FreeRTOS.h)(0x64020E50)
 I (D:\Softwares\Keil\ARM\ARMCLANG\include\stddef.h)(0x63884908)
 I (FreeRTOS\FreeRTOSConfig.h)(0x64D28383)
@@ -1984,7 +1985,8 @@ I (FreeRTOS\portable\GCC\ARM_CM4F\portmacro.h)(0x64D1E542)
 I (FreeRTOS\include\mpu_wrappers.h)(0x64020E50)
 I (System\Delay.h)(0x64DB4861)
 I (System\sys.h)(0x64D629ED)
-I (Peripherals\2.4_TFT_SPI\2.4TFT.h)(0x64DB396F)
+I (Peripherals\2.4_TFT_SPI\2.4TFT.h)(0x64DB4A60)
 I (D:\Softwares\Keil\ARM\ARMCLANG\include\string.h)(0x63884908)
-I (Driver\SPI.h)(0x64DB26E4)
+I (Driver\SPI.h)(0x64DB4F93)
+I (Peripherals\2.4_TFT_SPI\test.h)(0x64DB4D74)
 F (.\User\stm32f4xx_it.h)(0x64D5F246)()

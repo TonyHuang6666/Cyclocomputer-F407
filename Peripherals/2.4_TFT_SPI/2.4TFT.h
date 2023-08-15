@@ -17,7 +17,7 @@ extern uint16_t BACK_COLOR;	 // 画笔颜色：背景颜色默认为白色
 #define LED 2	  // 背光控制引脚        PA2
 #define LCD_LED_Pin   GPIO_Pin_2
 // 采用了三极管控制背光亮灭，也可以接PWM调节背光亮度
-#define LCD_LED PAout(LED) // LCD背光    		 PA2
+#define LCD_LED PAout(LED)=1 // LCD背光    		 PA2
 
 // 修改为STM32F407VGT6的引脚配置
 #define LCD_RS_Pin    GPIO_Pin_1  // 数据/命令 PA1
