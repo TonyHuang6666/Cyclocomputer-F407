@@ -28,4 +28,12 @@
   STM32F4xx_StdPeriph_Driver\stm32f4xx_can.h \
   STM32F4xx_StdPeriph_Driver\stm32f4xx_dac.h \
   STM32F4xx_StdPeriph_Driver\stm32f4xx_dcmi.h \
-  STM32F4xx_StdPeriph_Driver\stm32f4xx_fsmc.h User\main.h
+  STM32F4xx_StdPeriph_Driver\stm32f4xx_fsmc.h User\main.h \
+  FreeRTOS\include\FreeRTOS.h \
+  D:\Softwares\Keil\ARM\ARMCLANG\Bin\..\include\stddef.h \
+  FreeRTOS\FreeRTOSConfig.h FreeRTOS\include\projdefs.h \
+  FreeRTOS\include\portable.h FreeRTOS\include\deprecated_definitions.h \
+  FreeRTOS\portable\GCC\ARM_CM4F\portmacro.h \
+  FreeRTOS\include\mpu_wrappers.h System\Delay.h System\sys.h \
+  Peripherals\2.4_TFT_SPI\2.4TFT.h \
+  D:\Softwares\Keil\ARM\ARMCLANG\Bin\..\include\string.h Driver\SPI.h

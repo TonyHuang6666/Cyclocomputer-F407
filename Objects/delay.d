@@ -1,9 +1,10 @@
-./objects/delay.o: System\Delay.c System\Delay.h User\stm32f4xx_conf.h \
-  STM32F4xx_StdPeriph_Driver\stm32f4xx_adc.h CMSIS\stm32f4xx.h \
-  CMSIS\core_cm4.h \
+./objects/delay.o: System\Delay.c System\Delay.h System\sys.h \
+  CMSIS\stm32f4xx.h CMSIS\core_cm4.h \
   D:\Softwares\Keil\ARM\ARMCLANG\Bin\..\include\stdint.h \
   CMSIS\core_cmInstr.h CMSIS\core_cmFunc.h CMSIS\core_cmSimd.h \
-  CMSIS\system_stm32f4xx.h STM32F4xx_StdPeriph_Driver\stm32f4xx_crc.h \
+  CMSIS\system_stm32f4xx.h User\stm32f4xx_conf.h \
+  STM32F4xx_StdPeriph_Driver\stm32f4xx_adc.h \
+  STM32F4xx_StdPeriph_Driver\stm32f4xx_crc.h \
   STM32F4xx_StdPeriph_Driver\stm32f4xx_dbgmcu.h \
   STM32F4xx_StdPeriph_Driver\stm32f4xx_dma.h \
   STM32F4xx_StdPeriph_Driver\stm32f4xx_exti.h \

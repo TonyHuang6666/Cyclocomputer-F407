@@ -29,5 +29,5 @@
   STM32F4xx_StdPeriph_Driver\stm32f4xx_dcmi.h \
   STM32F4xx_StdPeriph_Driver\stm32f4xx_fsmc.h \
   Peripherals\2.4_TFT_SPI\2.4TFT.h System\sys.h System\Delay.h \
-  D:\Softwares\Keil\ARM\ARMCLANG\Bin\..\include\string.h \
-  Peripherals\2.4_TFT_SPI\font.h Driver\SPI.h
+  D:\Softwares\Keil\ARM\ARMCLANG\Bin\..\include\string.h Driver\SPI.h \
+  Peripherals\2.4_TFT_SPI\font.h

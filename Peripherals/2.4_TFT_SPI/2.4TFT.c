@@ -1,8 +1,6 @@
 #include "stm32f4xx_conf.h" 
 #include "2.4TFT.h"
-#include "string.h"
-#include "font.h" 
-#include "SPI.h"
+#include "font.h"
 
 LCD_Dev lcddev;//管理LCD重要参数。默认为竖屏
 uint16_t POINT_COLOR = BLACK,BACK_COLOR = WHITE;//画笔颜色,背景颜色
@@ -19,10 +17,10 @@ uint16_t POINT_COLOR = BLACK,BACK_COLOR = WHITE;//画笔颜色,背景颜色
  ******************************************************************************/
 void LCD_WR_REG(uint8_t data)
 {
-	LCD_CS_CLR;
+	SPI_Start();
 	LCD_RS_CLR;
 	SPI_ExchangeByte(data);
-	LCD_CS_SET;
+	SPI_Stop();
 }
 
 /*****************************************************************************
@@ -33,10 +31,10 @@ void LCD_WR_REG(uint8_t data)
  ******************************************************************************/
 void LCD_WR_DATA(uint8_t data)
 {
-	LCD_CS_CLR;
+	SPI_Start();
 	LCD_RS_SET;
 	SPI_ExchangeByte(data);
-	LCD_CS_SET;
+	SPI_Stop();
 }
 
 /*****************************************************************************
@@ -71,11 +69,11 @@ void LCD_WriteRAM_Prepare(void)
 ******************************************************************************/	 
 void Lcd_WriteData_16Bit(uint16_t Data)
 {	
-   LCD_CS_CLR;
+   SPI_Start();
    LCD_RS_SET;  
    SPI_ExchangeByte(Data>>8);
 	 SPI_ExchangeByte(Data);
-   LCD_CS_SET;
+   SPI_Stop();
 }
 
 /*****************************************************************************
@@ -101,7 +99,7 @@ void LCD_Clear(uint16_t Color)
 {
   unsigned int i,m;  
 	LCD_SetWindows(0,0,lcddev.Width-1,lcddev.Height-1);   
-	LCD_CS_CLR;
+	SPI_Start();
 	LCD_RS_SET;
 	for(i=0;i<lcddev.Height;i++)
 	{
@@ -110,7 +108,7 @@ void LCD_Clear(uint16_t Color)
 			Lcd_WriteData_16Bit(Color);
 		}
 	}
-	 LCD_CS_SET;
+	SPI_Stop();
 } 
 
 /*****************************************************************************
@@ -122,13 +120,13 @@ void LCD_Clear(uint16_t Color)
 void LCD_GPIOInit(void)
 {
 	 GPIO_InitTypeDef GPIO_InitStructure;
-	 RCC_AHB1PeriphClockCmd(RCC_AHB1Periph_GPIOB, ENABLE);				   
-	 GPIO_InitStructure.GPIO_Pin = LCD_LED | LCD_RS | LCD_RST; // 
-	 GPIO_InitStructure.GPIO_Speed = GPIO_Speed_100MHz;
-   GPIO_InitStructure.GPIO_OType = GPIO_OType_PP;  
+	 RCC_AHB1PeriphClockCmd(RCC_AHB1Periph_GPIOA, ENABLE);
+	 GPIO_InitStructure.GPIO_Pin = LCD_LED_Pin | LCD_RS_Pin | LCD_RST_Pin; //
+	 GPIO_InitStructure.GPIO_Speed = GPIO_High_Speed;
+	 GPIO_InitStructure.GPIO_OType = GPIO_OType_PP;
 	 GPIO_InitStructure.GPIO_Mode = GPIO_Mode_OUT;
-   GPIO_InitStructure.GPIO_PuPd = GPIO_PuPd_NOPULL;  
-	 GPIO_Init(GPIOB, &GPIO_InitStructure);								   
+	 GPIO_InitStructure.GPIO_PuPd = GPIO_PuPd_UP;
+	 GPIO_Init(GPIOA, &GPIO_InitStructure);
 }
 
 /*****************************************************************************
@@ -251,8 +249,8 @@ void LCD_Init(void)
 	LCD_WR_REG(0x29); //display on
 
   	LCD_Direction(USE_HORIZONTAL);//设置LCD显示方向
-	LCD_LED=1;//点亮背光	 
-	LCD_Clear(WHITE);//清全屏白色
+	GPIO_WriteBit(GPIOA,LCD_LED_Pin,Bit_SET);//点亮背光	 
+	LCD_Clear(BLUE);//清全屏白色
 }
  
 /*****************************************************************************

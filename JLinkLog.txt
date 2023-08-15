@@ -1,0 +1,46 @@
+T1C74 003:361.856   SEGGER J-Link V7.82 Log File
+T1C74 003:379.255   DLL Compiled: Oct 13 2022 13:32:51
+T1C74 003:379.273   Logging started @ 2023-08-15 09:14
+T1C74 003:379.290 - 3379.298ms
+T1C74 003:379.835 JLINK_SetWarnOutHandler(...)
+T1C74 003:380.375 - 0.548ms
+T1C74 003:380.396 JLINK_OpenEx(...)
+T1C74 003:383.667   
+  ***** Error: 
+T1C74 003:383.744   Cannot connect to J-Link.
+T1C74 003:399.449 - 19.085ms returns "Cannot connect to J-Link."
+T1C74 003:399.815 
+  ***** 
+T1C74 003:399.851 API Error: API JLINK_GetHardwareVersion function called before JLINKARM_Open()
+T1C74 003:399.882 JLINK_GetHardwareVersion()
+T1C74 003:401.053   
+  ***** Error: 
+T1C74 003:401.098   Cannot connect to J-Link.
+T1C74 003:414.974 - 15.242ms
+T1C74 010:168.082 JLINK_IsOpen()
+T1C74 010:168.100 - 0.021ms returns 0x00
+T1C74 010:168.112 JLINK_EMU_SelectByUSBSN(SerialNo = 0)
+T1C74 010:177.276 - 9.172ms returns 0xFFFFFFFF
+T1C74 010:177.291 JLINK_EnableLog(...)
+T1C74 010:177.296 - 0.006ms
+T1C74 010:177.301 JLINK_SetLogFile(...)
+T1C74 010:177.309 - 0.010ms
+T1C74 010:177.315 JLINK_SetWarnOutHandler(...)
+T1C74 010:177.319 - 0.006ms
+T1C74 010:177.324 JLINK_OpenEx(...)
+T1C74 010:178.176   
+  ***** Error: 
+T1C74 010:178.189   Cannot connect to J-Link.
+T1C74 010:194.019 - 16.708ms returns "Cannot connect to J-Link."
+T1C74 010:194.411 
+  ***** 
+T1C74 010:194.424 API Error: API JLINK_GetHardwareVersion function called before JLINKARM_Open()
+T1C74 010:194.433 JLINK_GetHardwareVersion()
+T1C74 010:195.413   
+  ***** Error: 
+T1C74 010:195.425   Cannot connect to J-Link.
+T1C74 010:208.998 - 14.578ms
+T1C74 011:732.224 JLINK_Close()
+T1C74 011:732.383 - 0.167ms
+T1C74 011:732.409   
+T1C74 011:732.416   Closed

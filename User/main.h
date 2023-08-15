@@ -23,7 +23,10 @@
 #define __MAIN_H
 
 /* Includes ------------------------------------------------------------------*/
-
+#include "stm32f4xx_conf.h"
+#include "FreeRTOS.h"
+#include "Delay.h"
+#include "2.4TFT.h"
 
 /* Exported types ------------------------------------------------------------*/
 /* Exported constants --------------------------------------------------------*/

@@ -33,5 +33,6 @@
   FreeRTOS\FreeRTOSConfig.h FreeRTOS\include\projdefs.h \
   FreeRTOS\include\portable.h FreeRTOS\include\deprecated_definitions.h \
   FreeRTOS\portable\GCC\ARM_CM4F\portmacro.h \
-  FreeRTOS\include\mpu_wrappers.h System\Delay.h \
-  Peripherals\2.4_TFT_SPI\2.4TFT.h System\sys.h
+  FreeRTOS\include\mpu_wrappers.h System\Delay.h System\sys.h \
+  Peripherals\2.4_TFT_SPI\2.4TFT.h \
+  D:\Softwares\Keil\ARM\ARMCLANG\Bin\..\include\string.h Driver\SPI.h

@@ -30,4 +30,5 @@
   STM32F4xx_StdPeriph_Driver\stm32f4xx_dac.h \
   STM32F4xx_StdPeriph_Driver\stm32f4xx_dcmi.h \
   STM32F4xx_StdPeriph_Driver\stm32f4xx_fsmc.h System\Delay.h \
+  D:\Softwares\Keil\ARM\ARMCLANG\Bin\..\include\string.h Driver\SPI.h \
   Peripherals\Key\Key.h Peripherals\2.4_TFT_SPI\pic.h
