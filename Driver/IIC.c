@@ -1,4 +1,3 @@
-#include "stm32f4xx.h"
 #include "Delay.h"
 #include "IIC.h"
 
@@ -20,12 +19,18 @@ void IIC_Initilize(void)
     */
     //硬件实现
      //1.GPIO初始化
-    RCC_APB2PeriphClockCmd(I2C_GPIO_CLK,ENABLE);
+    RCC_AHB1PeriphClockCmd(I2C_GPIO_CLK,ENABLE);
     GPIO_InitTypeDef GPIO_InitStructure;
-    GPIO_InitStructure.GPIO_Pin = I2C__SCL_PIN|I2C__SDA_PIN;
-    GPIO_InitStructure.GPIO_Mode = GPIO_Mode_AF_OD;//复用：引脚控制外设 开漏：IIC的时钟线是双向的
-    GPIO_InitStructure.GPIO_Speed = GPIO_Speed_50MHz;
+    GPIO_InitStructure.GPIO_Pin = I2C_SCL_PIN|I2C_SDA_PIN;
+    GPIO_InitStructure.GPIO_Mode = GPIO_Mode_AF;
+    GPIO_InitStructure.GPIO_OType = GPIO_OType_OD;//开漏：IIC的时钟线是双向的
+    GPIO_InitStructure.GPIO_PuPd = GPIO_PuPd_UP;//上拉
+    GPIO_InitStructure.GPIO_Speed = GPIO_SpeedRate;
     GPIO_Init(I2C_GPIO_PORT,&GPIO_InitStructure);
+
+    GPIO_PinAFConfig(I2C_GPIO_PORT,GPIO_PinSource6,GPIO_AF_I2C1);//将GPIOB的6号引脚复用为I2C1的SCL引脚
+    GPIO_PinAFConfig(I2C_GPIO_PORT,GPIO_PinSource7,GPIO_AF_I2C1);//将GPIOB的7号引脚复用为I2C1的SDA引脚
+   
     //2.IIC初始化
     RCC_APB1PeriphClockCmd(I2C_PORT_CLK,ENABLE);
     I2C_InitTypeDef I2C_InitStructure;

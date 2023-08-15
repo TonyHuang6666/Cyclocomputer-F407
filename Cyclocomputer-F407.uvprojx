@@ -394,6 +394,16 @@
               <FileType>5</FileType>
               <FilePath>.\Driver\SPI.h</FilePath>
             </File>
+            <File>
+              <FileName>IIC.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>.\Driver\IIC.c</FilePath>
+            </File>
+            <File>
+              <FileName>IIC.h</FileName>
+              <FileType>5</FileType>
+              <FilePath>.\Driver\IIC.h</FilePath>
+            </File>
           </Files>
         </Group>
         <Group>
@@ -428,6 +438,21 @@
               <FileName>test.h</FileName>
               <FileType>5</FileType>
               <FilePath>.\Peripherals\2.4_TFT_SPI\test.h</FilePath>
+            </File>
+            <File>
+              <FileName>MPU6050.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>.\Peripherals\MPU6050\MPU6050.c</FilePath>
+            </File>
+            <File>
+              <FileName>MPU6050.h</FileName>
+              <FileType>5</FileType>
+              <FilePath>.\Peripherals\MPU6050\MPU6050.h</FilePath>
+            </File>
+            <File>
+              <FileName>MPU6050_Reg.h</FileName>
+              <FileType>5</FileType>
+              <FilePath>.\Peripherals\MPU6050\MPU6050_Reg.h</FilePath>
             </File>
           </Files>
         </Group>

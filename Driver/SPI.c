@@ -29,7 +29,7 @@ void SPI_Initilize(void)
     GPIO_InitStructure.GPIO_Mode = GPIO_Mode_AF;//复用功能
     GPIO_InitStructure.GPIO_Speed = GPIO_SpeedRate;//速率
     GPIO_InitStructure.GPIO_OType = GPIO_OType_PP;//推挽输出
-    GPIO_InitStructure.GPIO_PuPd = GPIO_PuPd_UP;//上拉
+    GPIO_InitStructure.GPIO_PuPd = GPIO_PuPd_NOPULL;//不上拉也不下拉
     GPIO_Init(SPI_GPIO_PORT, &GPIO_InitStructure);//初始化GPIOA
 
     GPIO_InitStructure.GPIO_Pin = SPI_CS_PIN; //CS引脚
@@ -60,7 +60,7 @@ void SPI_Initilize(void)
     SPI_InitStructure.SPI_DataSize = SPI_DataSize_8b;//数据大小为8位
     SPI_Init(SPI_PORT, &SPI_InitStructure);//初始化SPI
     SPI_Cmd(SPI_PORT, ENABLE);//使能SPI
-    PAout(SPI_GPIOA_CS_Pin)=1;;//SS引脚置高电平，SPI总线空闲状态。默认不选中从机
+    PAout(SPI_GPIOA_CS_Pin)=1;;//CS引脚置高电平，SPI总线空闲状态。默认不选中从机
 }
 
 uint8_t SPI_ExchangeByte(uint8_t TxData)//硬件交换一个字长数据；连续传输；模式0

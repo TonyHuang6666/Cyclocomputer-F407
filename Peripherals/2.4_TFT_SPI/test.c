@@ -138,7 +138,7 @@ void Rotate_Test(void)
 	DrawTestPage("Test:Rotate test");
 	Show_Str(20,30,BLUE,YELLOW,Direction[i],16,1);
 	Gui_Drawbmp16(30,50,gImage_qq_logo);
-	Delay_ms(1000);Delay_ms(1000);
+	//Delay_ms(100);
 	}
 	LCD_Direction(USE_HORIZONTAL);
 }

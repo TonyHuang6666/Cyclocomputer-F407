@@ -1,9 +1,10 @@
-./objects/main.o: User\main.c User\main.h User\stm32f4xx_conf.h \
-  STM32F4xx_StdPeriph_Driver\stm32f4xx_adc.h CMSIS\stm32f4xx.h \
-  CMSIS\core_cm4.h \
+./objects/iic.o: Driver\IIC.c System\Delay.h System\sys.h \
+  CMSIS\stm32f4xx.h CMSIS\core_cm4.h \
   D:\Softwares\Keil\ARM\ARMCLANG\Bin\..\include\stdint.h \
   CMSIS\core_cmInstr.h CMSIS\core_cmFunc.h CMSIS\core_cmSimd.h \
-  CMSIS\system_stm32f4xx.h STM32F4xx_StdPeriph_Driver\stm32f4xx_crc.h \
+  CMSIS\system_stm32f4xx.h User\stm32f4xx_conf.h \
+  STM32F4xx_StdPeriph_Driver\stm32f4xx_adc.h \
+  STM32F4xx_StdPeriph_Driver\stm32f4xx_crc.h \
   STM32F4xx_StdPeriph_Driver\stm32f4xx_dbgmcu.h \
   STM32F4xx_StdPeriph_Driver\stm32f4xx_dma.h \
   STM32F4xx_StdPeriph_Driver\stm32f4xx_exti.h \
@@ -27,14 +28,4 @@
   STM32F4xx_StdPeriph_Driver\stm32f4xx_can.h \
   STM32F4xx_StdPeriph_Driver\stm32f4xx_dac.h \
   STM32F4xx_StdPeriph_Driver\stm32f4xx_dcmi.h \
-  STM32F4xx_StdPeriph_Driver\stm32f4xx_fsmc.h \
-  FreeRTOS\include\FreeRTOS.h \
-  D:\Softwares\Keil\ARM\ARMCLANG\Bin\..\include\stddef.h \
-  FreeRTOS\FreeRTOSConfig.h FreeRTOS\include\projdefs.h \
-  FreeRTOS\include\portable.h FreeRTOS\include\deprecated_definitions.h \
-  FreeRTOS\portable\GCC\ARM_CM4F\portmacro.h \
-  FreeRTOS\include\mpu_wrappers.h System\Delay.h System\sys.h \
-  Peripherals\2.4_TFT_SPI\2.4TFT.h \
-  D:\Softwares\Keil\ARM\ARMCLANG\Bin\..\include\string.h Driver\SPI.h \
-  Peripherals\MPU6050\MPU6050.h Driver\IIC.h \
-  Peripherals\MPU6050\MPU6050_Reg.h Peripherals\2.4_TFT_SPI\test.h
+  STM32F4xx_StdPeriph_Driver\stm32f4xx_fsmc.h Driver\IIC.h

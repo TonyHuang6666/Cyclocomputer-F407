@@ -1,5 +1,4 @@
 #include "stm32f4xx.h"
-#include "MPU6050_Reg.h"
 #include "MPU6050.h"
 
 #define SlaveAddress 0xD0 // MPU6050的从机地址

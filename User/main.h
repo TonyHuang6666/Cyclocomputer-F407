@@ -27,6 +27,7 @@
 #include "FreeRTOS.h"
 #include "Delay.h"
 #include "2.4TFT.h"
+#include "MPU6050.h"
 #include "test.h"
 /* Exported types ------------------------------------------------------------*/
 /* Exported constants --------------------------------------------------------*/

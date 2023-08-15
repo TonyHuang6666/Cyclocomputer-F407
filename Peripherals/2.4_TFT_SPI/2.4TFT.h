@@ -1,6 +1,5 @@
 #ifndef _2_4TFT_H
 #define _2_4TFT_H
-#include "stm32f4xx_conf.h"
 #include "Delay.h"
 #include "string.h"
 #include "SPI.h"
