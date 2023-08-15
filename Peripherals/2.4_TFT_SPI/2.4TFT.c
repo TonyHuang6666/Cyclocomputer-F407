@@ -1,4 +1,4 @@
-#include "stm32f4xx.h" 
+#include "stm32f4xx_conf.h" 
 #include "2.4TFT.h"
 #include "string.h"
 #include "font.h" 

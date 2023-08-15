@@ -1,6 +1,6 @@
 #ifndef SPI_H_
 #define SPI_H_
-#include "stm32f4xx.h"
+#include "stm32f4xx_conf.h"
 
 #define SPI_PORT SPI1
 #define SPI_PORT_CLK RCC_APB2Periph_SPI1 //SPI1为APB2外LCD_Clear(uint16_t Color);设(高速)，SPI2为APB1外设(低速)

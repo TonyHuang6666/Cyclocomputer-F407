@@ -1,4 +1,8 @@
 #include "main.h"
+#include "stm32f4xx_conf.h"
+#include "FreeRTOS.h"
+#include "Delay.h"
+#include "2.4TFT.h"
 
 int main(void)
 {
