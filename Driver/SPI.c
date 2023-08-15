@@ -1,21 +1,15 @@
 #include "SPI.h"
 
-//以下函数为对引脚操作的封装和改名，方便移植
-void SPI_CS(uint8_t BitValue)//写SS引脚电平
-{
-    GPIO_WriteBit(SPI_GPIO_PORT, SPI_CS_PIN, (BitAction)BitValue);
-}
-
 //以下为SPI的三种基本条件：起始条件、终止条件、交换一个字节（模式0）
 
 void SPI_Start(void)//硬件SPI起始条件
 {
-    SPI_CS(0);//SS引脚拉低
+    PAout(SPI_GPIOA_CS_Pin)=0;//SS引脚拉低
 }
 
 void SPI_Stop(void)//硬件SPI终止条件
 {
-    SPI_CS(1);//SS引脚拉高
+    PAout(SPI_GPIOA_CS_Pin)=1;//SS引脚拉高
 }
 
 void SPI_Initilize(void)
@@ -48,7 +42,10 @@ void SPI_Initilize(void)
     GPIO_PinAFConfig(SPI_GPIO_PORT, GPIO_PinSource5, GPIO_AF_SPI1);//SCK引脚复用为SPI1
     GPIO_PinAFConfig(SPI_GPIO_PORT, GPIO_PinSource6, GPIO_AF_SPI1);//MISO引脚复用为SPI1
     GPIO_PinAFConfig(SPI_GPIO_PORT, GPIO_PinSource7, GPIO_AF_SPI1);//MOSI引脚复用为SPI1
-    
+
+    RCC_APB2PeriphResetCmd(RCC_APB2Periph_SPI1,ENABLE);//复位SPI1
+	RCC_APB2PeriphResetCmd(RCC_APB2Periph_SPI1,DISABLE);//停止复位SPI1
+
     //2.初始化SPI配置
     RCC_APB2PeriphClockCmd(SPI_PORT_CLK, ENABLE);//使能SPI时钟
     SPI_InitTypeDef SPI_InitStructure;
@@ -63,12 +60,11 @@ void SPI_Initilize(void)
     SPI_InitStructure.SPI_DataSize = SPI_DataSize_8b;//数据大小为8位
     SPI_Init(SPI_PORT, &SPI_InitStructure);//初始化SPI
     SPI_Cmd(SPI_PORT, ENABLE);//使能SPI
-    SPI_CS(1);//SS引脚置高电平，SPI总线空闲状态。默认不选中从机
+    PAout(SPI_GPIOA_CS_Pin)=1;;//SS引脚置高电平，SPI总线空闲状态。默认不选中从机
 }
 
 uint8_t SPI_ExchangeByte(uint8_t TxData)//硬件交换一个字长数据；连续传输；模式0
 {
-  
     //硬件实现，非连续传输
     while(SPI_I2S_GetFlagStatus(SPI_PORT,SPI_I2S_FLAG_TXE) != SET);//等待发送缓冲区空。写入DR会顺便清除TXE标志
     SPI_I2S_SendData(SPI_PORT, TxData);//发送数据

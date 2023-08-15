@@ -3,11 +3,11 @@
 <title>Static Call Graph - [.\Objects\Cyclocomputer-F407.axf]</title></head>
 <body><HR>
 <H1>Static Call Graph for image .\Objects\Cyclocomputer-F407.axf</H1><HR>
-<BR><P>#&#060CALLGRAPH&#062# ARM Linker, 6190004: Last Updated: Tue Aug 15 18:14:07 2023
+<BR><P>#&#060CALLGRAPH&#062# ARM Linker, 6190004: Last Updated: Tue Aug 15 19:48:51 2023
 <BR><P>
-<H3>Maximum Stack Usage =        352 bytes + Unknown(Functions without stacksize, Cycles, Untraceable Function Pointers)</H3><H3>
+<H3>Maximum Stack Usage =        344 bytes + Unknown(Functions without stacksize, Cycles, Untraceable Function Pointers)</H3><H3>
 Call chain for Maximum Stack Depth:</H3>
-__rt_entry_main &rArr; main &rArr; Rotate_Test &rArr; DrawTestPage &rArr; Gui_StrCenter &rArr; Show_Str &rArr; GUI_DrawFont32 &rArr; LCD_DrawPoint &rArr; LCD_SetCursor &rArr; LCD_SetWindows &rArr; LCD_WriteRAM_Prepare &rArr; LCD_WR_REG &rArr; SPI_Stop &rArr; SPI_CS &rArr; GPIO_WriteBit
+__rt_entry_main &rArr; main &rArr; Rotate_Test &rArr; DrawTestPage &rArr; Gui_StrCenter &rArr; Show_Str &rArr; GUI_DrawFont32 &rArr; LCD_DrawPoint &rArr; LCD_SetCursor &rArr; LCD_SetWindows &rArr; LCD_WriteRAM_Prepare &rArr; LCD_WR_REG &rArr; SPI_ExchangeByte &rArr; SPI_I2S_SendData
 <P>
 <H3>
 Functions with no stack information
@@ -137,11 +137,11 @@ Global Symbols
 <BR><BR>[Calls]<UL><LI><a href="#[60]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__rt_entry
 </UL>
 
-<P><STRONG><a name="[a0]"></a>__scatterload_rt2_thumb_only</STRONG> (Thumb, 0 bytes, Stack size unknown bytes, __scatter.o(!!!scatter), UNUSED)
+<P><STRONG><a name="[9f]"></a>__scatterload_rt2_thumb_only</STRONG> (Thumb, 0 bytes, Stack size unknown bytes, __scatter.o(!!!scatter), UNUSED)
 
-<P><STRONG><a name="[a1]"></a>__scatterload_null</STRONG> (Thumb, 0 bytes, Stack size unknown bytes, __scatter.o(!!!scatter), UNUSED)
+<P><STRONG><a name="[a0]"></a>__scatterload_null</STRONG> (Thumb, 0 bytes, Stack size unknown bytes, __scatter.o(!!!scatter), UNUSED)
 
-<P><STRONG><a name="[a2]"></a>__scatterload_zeroinit</STRONG> (Thumb, 28 bytes, Stack size unknown bytes, __scatter_zi.o(!!handler_zi), UNUSED)
+<P><STRONG><a name="[a1]"></a>__scatterload_zeroinit</STRONG> (Thumb, 28 bytes, Stack size unknown bytes, __scatter_zi.o(!!handler_zi), UNUSED)
 
 <P><STRONG><a name="[67]"></a>__rt_lib_init</STRONG> (Thumb, 0 bytes, Stack size unknown bytes, libinit.o(.ARM.Collect$$libinit$$00000000))
 <BR><BR>[Called By]<UL><LI><a href="#[66]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__rt_entry_li
@@ -151,72 +151,72 @@ Global Symbols
 <BR><BR>[Calls]<UL><LI><a href="#[63]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;_fp_init
 </UL>
 
-<P><STRONG><a name="[a3]"></a>__rt_lib_init_alloca_1</STRONG> (Thumb, 0 bytes, Stack size unknown bytes, libinit2.o(.ARM.Collect$$libinit$$00000030))
+<P><STRONG><a name="[a2]"></a>__rt_lib_init_alloca_1</STRONG> (Thumb, 0 bytes, Stack size unknown bytes, libinit2.o(.ARM.Collect$$libinit$$00000030))
 
-<P><STRONG><a name="[a4]"></a>__rt_lib_init_argv_1</STRONG> (Thumb, 0 bytes, Stack size unknown bytes, libinit2.o(.ARM.Collect$$libinit$$0000002E))
+<P><STRONG><a name="[a3]"></a>__rt_lib_init_argv_1</STRONG> (Thumb, 0 bytes, Stack size unknown bytes, libinit2.o(.ARM.Collect$$libinit$$0000002E))
 
-<P><STRONG><a name="[a5]"></a>__rt_lib_init_atexit_1</STRONG> (Thumb, 0 bytes, Stack size unknown bytes, libinit2.o(.ARM.Collect$$libinit$$0000001D))
+<P><STRONG><a name="[a4]"></a>__rt_lib_init_atexit_1</STRONG> (Thumb, 0 bytes, Stack size unknown bytes, libinit2.o(.ARM.Collect$$libinit$$0000001D))
 
-<P><STRONG><a name="[a6]"></a>__rt_lib_init_clock_1</STRONG> (Thumb, 0 bytes, Stack size unknown bytes, libinit2.o(.ARM.Collect$$libinit$$00000023))
+<P><STRONG><a name="[a5]"></a>__rt_lib_init_clock_1</STRONG> (Thumb, 0 bytes, Stack size unknown bytes, libinit2.o(.ARM.Collect$$libinit$$00000023))
 
-<P><STRONG><a name="[a7]"></a>__rt_lib_init_cpp_1</STRONG> (Thumb, 0 bytes, Stack size unknown bytes, libinit2.o(.ARM.Collect$$libinit$$00000034))
+<P><STRONG><a name="[a6]"></a>__rt_lib_init_cpp_1</STRONG> (Thumb, 0 bytes, Stack size unknown bytes, libinit2.o(.ARM.Collect$$libinit$$00000034))
 
-<P><STRONG><a name="[a8]"></a>__rt_lib_init_exceptions_1</STRONG> (Thumb, 0 bytes, Stack size unknown bytes, libinit2.o(.ARM.Collect$$libinit$$00000032))
+<P><STRONG><a name="[a7]"></a>__rt_lib_init_exceptions_1</STRONG> (Thumb, 0 bytes, Stack size unknown bytes, libinit2.o(.ARM.Collect$$libinit$$00000032))
 
-<P><STRONG><a name="[a9]"></a>__rt_lib_init_fp_trap_1</STRONG> (Thumb, 0 bytes, Stack size unknown bytes, libinit2.o(.ARM.Collect$$libinit$$00000021))
+<P><STRONG><a name="[a8]"></a>__rt_lib_init_fp_trap_1</STRONG> (Thumb, 0 bytes, Stack size unknown bytes, libinit2.o(.ARM.Collect$$libinit$$00000021))
 
-<P><STRONG><a name="[aa]"></a>__rt_lib_init_getenv_1</STRONG> (Thumb, 0 bytes, Stack size unknown bytes, libinit2.o(.ARM.Collect$$libinit$$00000025))
+<P><STRONG><a name="[a9]"></a>__rt_lib_init_getenv_1</STRONG> (Thumb, 0 bytes, Stack size unknown bytes, libinit2.o(.ARM.Collect$$libinit$$00000025))
 
-<P><STRONG><a name="[ab]"></a>__rt_lib_init_heap_1</STRONG> (Thumb, 0 bytes, Stack size unknown bytes, libinit2.o(.ARM.Collect$$libinit$$0000000C))
+<P><STRONG><a name="[aa]"></a>__rt_lib_init_heap_1</STRONG> (Thumb, 0 bytes, Stack size unknown bytes, libinit2.o(.ARM.Collect$$libinit$$0000000C))
 
-<P><STRONG><a name="[ac]"></a>__rt_lib_init_lc_collate_1</STRONG> (Thumb, 0 bytes, Stack size unknown bytes, libinit2.o(.ARM.Collect$$libinit$$00000013))
+<P><STRONG><a name="[ab]"></a>__rt_lib_init_lc_collate_1</STRONG> (Thumb, 0 bytes, Stack size unknown bytes, libinit2.o(.ARM.Collect$$libinit$$00000013))
 
-<P><STRONG><a name="[ad]"></a>__rt_lib_init_lc_ctype_1</STRONG> (Thumb, 0 bytes, Stack size unknown bytes, libinit2.o(.ARM.Collect$$libinit$$00000015))
+<P><STRONG><a name="[ac]"></a>__rt_lib_init_lc_ctype_1</STRONG> (Thumb, 0 bytes, Stack size unknown bytes, libinit2.o(.ARM.Collect$$libinit$$00000015))
 
-<P><STRONG><a name="[ae]"></a>__rt_lib_init_lc_monetary_1</STRONG> (Thumb, 0 bytes, Stack size unknown bytes, libinit2.o(.ARM.Collect$$libinit$$00000017))
+<P><STRONG><a name="[ad]"></a>__rt_lib_init_lc_monetary_1</STRONG> (Thumb, 0 bytes, Stack size unknown bytes, libinit2.o(.ARM.Collect$$libinit$$00000017))
 
-<P><STRONG><a name="[af]"></a>__rt_lib_init_lc_numeric_1</STRONG> (Thumb, 0 bytes, Stack size unknown bytes, libinit2.o(.ARM.Collect$$libinit$$00000019))
+<P><STRONG><a name="[ae]"></a>__rt_lib_init_lc_numeric_1</STRONG> (Thumb, 0 bytes, Stack size unknown bytes, libinit2.o(.ARM.Collect$$libinit$$00000019))
 
-<P><STRONG><a name="[b0]"></a>__rt_lib_init_lc_time_1</STRONG> (Thumb, 0 bytes, Stack size unknown bytes, libinit2.o(.ARM.Collect$$libinit$$0000001B))
+<P><STRONG><a name="[af]"></a>__rt_lib_init_lc_time_1</STRONG> (Thumb, 0 bytes, Stack size unknown bytes, libinit2.o(.ARM.Collect$$libinit$$0000001B))
 
-<P><STRONG><a name="[b1]"></a>__rt_lib_init_preinit_1</STRONG> (Thumb, 0 bytes, Stack size unknown bytes, libinit2.o(.ARM.Collect$$libinit$$00000006))
+<P><STRONG><a name="[b0]"></a>__rt_lib_init_preinit_1</STRONG> (Thumb, 0 bytes, Stack size unknown bytes, libinit2.o(.ARM.Collect$$libinit$$00000006))
 
-<P><STRONG><a name="[b2]"></a>__rt_lib_init_rand_1</STRONG> (Thumb, 0 bytes, Stack size unknown bytes, libinit2.o(.ARM.Collect$$libinit$$00000010))
+<P><STRONG><a name="[b1]"></a>__rt_lib_init_rand_1</STRONG> (Thumb, 0 bytes, Stack size unknown bytes, libinit2.o(.ARM.Collect$$libinit$$00000010))
 
-<P><STRONG><a name="[b3]"></a>__rt_lib_init_relocate_pie_1</STRONG> (Thumb, 0 bytes, Stack size unknown bytes, libinit2.o(.ARM.Collect$$libinit$$00000004))
+<P><STRONG><a name="[b2]"></a>__rt_lib_init_relocate_pie_1</STRONG> (Thumb, 0 bytes, Stack size unknown bytes, libinit2.o(.ARM.Collect$$libinit$$00000004))
 
-<P><STRONG><a name="[b4]"></a>__rt_lib_init_return</STRONG> (Thumb, 0 bytes, Stack size unknown bytes, libinit2.o(.ARM.Collect$$libinit$$00000035))
+<P><STRONG><a name="[b3]"></a>__rt_lib_init_return</STRONG> (Thumb, 0 bytes, Stack size unknown bytes, libinit2.o(.ARM.Collect$$libinit$$00000035))
 
-<P><STRONG><a name="[b5]"></a>__rt_lib_init_signal_1</STRONG> (Thumb, 0 bytes, Stack size unknown bytes, libinit2.o(.ARM.Collect$$libinit$$0000001F))
+<P><STRONG><a name="[b4]"></a>__rt_lib_init_signal_1</STRONG> (Thumb, 0 bytes, Stack size unknown bytes, libinit2.o(.ARM.Collect$$libinit$$0000001F))
 
-<P><STRONG><a name="[b6]"></a>__rt_lib_init_stdio_1</STRONG> (Thumb, 0 bytes, Stack size unknown bytes, libinit2.o(.ARM.Collect$$libinit$$00000027))
+<P><STRONG><a name="[b5]"></a>__rt_lib_init_stdio_1</STRONG> (Thumb, 0 bytes, Stack size unknown bytes, libinit2.o(.ARM.Collect$$libinit$$00000027))
 
-<P><STRONG><a name="[b7]"></a>__rt_lib_init_user_alloc_1</STRONG> (Thumb, 0 bytes, Stack size unknown bytes, libinit2.o(.ARM.Collect$$libinit$$0000000E))
+<P><STRONG><a name="[b6]"></a>__rt_lib_init_user_alloc_1</STRONG> (Thumb, 0 bytes, Stack size unknown bytes, libinit2.o(.ARM.Collect$$libinit$$0000000E))
 
 <P><STRONG><a name="[6c]"></a>__rt_lib_shutdown</STRONG> (Thumb, 0 bytes, Stack size unknown bytes, libshutdown.o(.ARM.Collect$$libshutdown$$00000000))
 <BR><BR>[Called By]<UL><LI><a href="#[6b]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__rt_exit_ls
 </UL>
 
-<P><STRONG><a name="[b8]"></a>__rt_lib_shutdown_cpp_1</STRONG> (Thumb, 0 bytes, Stack size unknown bytes, libshutdown2.o(.ARM.Collect$$libshutdown$$00000002))
+<P><STRONG><a name="[b7]"></a>__rt_lib_shutdown_cpp_1</STRONG> (Thumb, 0 bytes, Stack size unknown bytes, libshutdown2.o(.ARM.Collect$$libshutdown$$00000002))
 
-<P><STRONG><a name="[b9]"></a>__rt_lib_shutdown_fp_trap_1</STRONG> (Thumb, 0 bytes, Stack size unknown bytes, libshutdown2.o(.ARM.Collect$$libshutdown$$00000007))
+<P><STRONG><a name="[b8]"></a>__rt_lib_shutdown_fp_trap_1</STRONG> (Thumb, 0 bytes, Stack size unknown bytes, libshutdown2.o(.ARM.Collect$$libshutdown$$00000007))
 
-<P><STRONG><a name="[ba]"></a>__rt_lib_shutdown_heap_1</STRONG> (Thumb, 0 bytes, Stack size unknown bytes, libshutdown2.o(.ARM.Collect$$libshutdown$$0000000F))
+<P><STRONG><a name="[b9]"></a>__rt_lib_shutdown_heap_1</STRONG> (Thumb, 0 bytes, Stack size unknown bytes, libshutdown2.o(.ARM.Collect$$libshutdown$$0000000F))
 
-<P><STRONG><a name="[bb]"></a>__rt_lib_shutdown_return</STRONG> (Thumb, 0 bytes, Stack size unknown bytes, libshutdown2.o(.ARM.Collect$$libshutdown$$00000010))
+<P><STRONG><a name="[ba]"></a>__rt_lib_shutdown_return</STRONG> (Thumb, 0 bytes, Stack size unknown bytes, libshutdown2.o(.ARM.Collect$$libshutdown$$00000010))
 
-<P><STRONG><a name="[bc]"></a>__rt_lib_shutdown_signal_1</STRONG> (Thumb, 0 bytes, Stack size unknown bytes, libshutdown2.o(.ARM.Collect$$libshutdown$$0000000A))
+<P><STRONG><a name="[bb]"></a>__rt_lib_shutdown_signal_1</STRONG> (Thumb, 0 bytes, Stack size unknown bytes, libshutdown2.o(.ARM.Collect$$libshutdown$$0000000A))
 
-<P><STRONG><a name="[bd]"></a>__rt_lib_shutdown_stdio_1</STRONG> (Thumb, 0 bytes, Stack size unknown bytes, libshutdown2.o(.ARM.Collect$$libshutdown$$00000004))
+<P><STRONG><a name="[bc]"></a>__rt_lib_shutdown_stdio_1</STRONG> (Thumb, 0 bytes, Stack size unknown bytes, libshutdown2.o(.ARM.Collect$$libshutdown$$00000004))
 
-<P><STRONG><a name="[be]"></a>__rt_lib_shutdown_user_alloc_1</STRONG> (Thumb, 0 bytes, Stack size unknown bytes, libshutdown2.o(.ARM.Collect$$libshutdown$$0000000C))
+<P><STRONG><a name="[bd]"></a>__rt_lib_shutdown_user_alloc_1</STRONG> (Thumb, 0 bytes, Stack size unknown bytes, libshutdown2.o(.ARM.Collect$$libshutdown$$0000000C))
 
 <P><STRONG><a name="[60]"></a>__rt_entry</STRONG> (Thumb, 0 bytes, Stack size unknown bytes, __rtentry.o(.ARM.Collect$$rtentry$$00000000))
 <BR><BR>[Called By]<UL><LI><a href="#[61]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__scatterload_rt2
 <LI><a href="#[5d]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__main
 </UL>
 
-<P><STRONG><a name="[bf]"></a>__rt_entry_presh_1</STRONG> (Thumb, 0 bytes, Stack size unknown bytes, __rtentry2.o(.ARM.Collect$$rtentry$$00000002))
+<P><STRONG><a name="[be]"></a>__rt_entry_presh_1</STRONG> (Thumb, 0 bytes, Stack size unknown bytes, __rtentry2.o(.ARM.Collect$$rtentry$$00000002))
 
 <P><STRONG><a name="[64]"></a>__rt_entry_sh</STRONG> (Thumb, 0 bytes, Stack size unknown bytes, __rtentry4.o(.ARM.Collect$$rtentry$$00000004))
 <BR><BR>[Stack]<UL><LI>Max Depth = 8 + Unknown Stack Size
@@ -229,17 +229,17 @@ Global Symbols
 <BR><BR>[Calls]<UL><LI><a href="#[67]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__rt_lib_init
 </UL>
 
-<P><STRONG><a name="[c0]"></a>__rt_entry_postsh_1</STRONG> (Thumb, 0 bytes, Stack size unknown bytes, __rtentry2.o(.ARM.Collect$$rtentry$$00000009))
+<P><STRONG><a name="[bf]"></a>__rt_entry_postsh_1</STRONG> (Thumb, 0 bytes, Stack size unknown bytes, __rtentry2.o(.ARM.Collect$$rtentry$$00000009))
 
 <P><STRONG><a name="[68]"></a>__rt_entry_main</STRONG> (Thumb, 0 bytes, Stack size unknown bytes, __rtentry2.o(.ARM.Collect$$rtentry$$0000000D))
-<BR><BR>[Stack]<UL><LI>Max Depth = 352 + Unknown Stack Size
-<LI>Call Chain = __rt_entry_main &rArr; main &rArr; Rotate_Test &rArr; DrawTestPage &rArr; Gui_StrCenter &rArr; Show_Str &rArr; GUI_DrawFont32 &rArr; LCD_DrawPoint &rArr; LCD_SetCursor &rArr; LCD_SetWindows &rArr; LCD_WriteRAM_Prepare &rArr; LCD_WR_REG &rArr; SPI_Stop &rArr; SPI_CS &rArr; GPIO_WriteBit
+<BR><BR>[Stack]<UL><LI>Max Depth = 344 + Unknown Stack Size
+<LI>Call Chain = __rt_entry_main &rArr; main &rArr; Rotate_Test &rArr; DrawTestPage &rArr; Gui_StrCenter &rArr; Show_Str &rArr; GUI_DrawFont32 &rArr; LCD_DrawPoint &rArr; LCD_SetCursor &rArr; LCD_SetWindows &rArr; LCD_WriteRAM_Prepare &rArr; LCD_WR_REG &rArr; SPI_ExchangeByte &rArr; SPI_I2S_SendData
 </UL>
 <BR>[Calls]<UL><LI><a href="#[6a]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;exit
 <LI><a href="#[69]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;main
 </UL>
 
-<P><STRONG><a name="[c1]"></a>__rt_entry_postli_1</STRONG> (Thumb, 0 bytes, Stack size unknown bytes, __rtentry2.o(.ARM.Collect$$rtentry$$0000000C))
+<P><STRONG><a name="[c0]"></a>__rt_entry_postli_1</STRONG> (Thumb, 0 bytes, Stack size unknown bytes, __rtentry2.o(.ARM.Collect$$rtentry$$0000000C))
 
 <P><STRONG><a name="[71]"></a>__rt_exit</STRONG> (Thumb, 0 bytes, Stack size unknown bytes, rtexit.o(.ARM.Collect$$rtexit$$00000000))
 <BR><BR>[Called By]<UL><LI><a href="#[6a]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;exit
@@ -249,7 +249,7 @@ Global Symbols
 <BR><BR>[Calls]<UL><LI><a href="#[6c]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__rt_lib_shutdown
 </UL>
 
-<P><STRONG><a name="[c2]"></a>__rt_exit_prels_1</STRONG> (Thumb, 0 bytes, Stack size unknown bytes, rtexit2.o(.ARM.Collect$$rtexit$$00000002))
+<P><STRONG><a name="[c1]"></a>__rt_exit_prels_1</STRONG> (Thumb, 0 bytes, Stack size unknown bytes, rtexit2.o(.ARM.Collect$$rtexit$$00000002))
 
 <P><STRONG><a name="[6d]"></a>__rt_exit_exit</STRONG> (Thumb, 0 bytes, Stack size unknown bytes, rtexit2.o(.ARM.Collect$$rtexit$$00000004))
 <BR><BR>[Calls]<UL><LI><a href="#[6e]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;_sys_exit
@@ -518,11 +518,11 @@ Global Symbols
 <BR>[Called By]<UL><LI><a href="#[79]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Gui_StrCenter
 </UL>
 
-<P><STRONG><a name="[c3]"></a>__use_two_region_memory</STRONG> (Thumb, 2 bytes, Stack size 0 bytes, heapauxi.o(.text), UNUSED)
+<P><STRONG><a name="[c2]"></a>__use_two_region_memory</STRONG> (Thumb, 2 bytes, Stack size 0 bytes, heapauxi.o(.text), UNUSED)
 
-<P><STRONG><a name="[c4]"></a>__rt_heap_escrow$2region</STRONG> (Thumb, 2 bytes, Stack size 0 bytes, heapauxi.o(.text), UNUSED)
+<P><STRONG><a name="[c3]"></a>__rt_heap_escrow$2region</STRONG> (Thumb, 2 bytes, Stack size 0 bytes, heapauxi.o(.text), UNUSED)
 
-<P><STRONG><a name="[c5]"></a>__rt_heap_expand$2region</STRONG> (Thumb, 2 bytes, Stack size 0 bytes, heapauxi.o(.text), UNUSED)
+<P><STRONG><a name="[c4]"></a>__rt_heap_expand$2region</STRONG> (Thumb, 2 bytes, Stack size 0 bytes, heapauxi.o(.text), UNUSED)
 
 <P><STRONG><a name="[65]"></a>__user_setup_stackheap</STRONG> (Thumb, 74 bytes, Stack size 8 bytes, sys_stackheap_outer.o(.text))
 <BR><BR>[Stack]<UL><LI>Max Depth = 8 + Unknown Stack Size
@@ -543,23 +543,23 @@ Global Symbols
 <BR>[Called By]<UL><LI><a href="#[68]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__rt_entry_main
 </UL>
 
-<P><STRONG><a name="[c6]"></a>__user_libspace</STRONG> (Thumb, 8 bytes, Stack size 0 bytes, libspace.o(.text), UNUSED)
+<P><STRONG><a name="[c5]"></a>__user_libspace</STRONG> (Thumb, 8 bytes, Stack size 0 bytes, libspace.o(.text), UNUSED)
 
 <P><STRONG><a name="[6f]"></a>__user_perproc_libspace</STRONG> (Thumb, 0 bytes, Stack size 0 bytes, libspace.o(.text))
 <BR><BR>[Called By]<UL><LI><a href="#[65]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__user_setup_stackheap
 </UL>
 
-<P><STRONG><a name="[c7]"></a>__user_perthread_libspace</STRONG> (Thumb, 0 bytes, Stack size 0 bytes, libspace.o(.text), UNUSED)
+<P><STRONG><a name="[c6]"></a>__user_perthread_libspace</STRONG> (Thumb, 0 bytes, Stack size 0 bytes, libspace.o(.text), UNUSED)
 
 <P><STRONG><a name="[6e]"></a>_sys_exit</STRONG> (Thumb, 8 bytes, Stack size 0 bytes, sys_exit.o(.text))
 <BR><BR>[Called By]<UL><LI><a href="#[6d]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__rt_exit_exit
 </UL>
 
-<P><STRONG><a name="[c8]"></a>__I$use$semihosting</STRONG> (Thumb, 0 bytes, Stack size 0 bytes, use_no_semi.o(.text), UNUSED)
+<P><STRONG><a name="[c7]"></a>__I$use$semihosting</STRONG> (Thumb, 0 bytes, Stack size 0 bytes, use_no_semi.o(.text), UNUSED)
 
-<P><STRONG><a name="[c9]"></a>__use_no_semihosting_swi</STRONG> (Thumb, 2 bytes, Stack size 0 bytes, use_no_semi.o(.text), UNUSED)
+<P><STRONG><a name="[c8]"></a>__use_no_semihosting_swi</STRONG> (Thumb, 2 bytes, Stack size 0 bytes, use_no_semi.o(.text), UNUSED)
 
-<P><STRONG><a name="[ca]"></a>__semihosting_library_function</STRONG> (Thumb, 0 bytes, Stack size unknown bytes, indicate_semi.o(.text), UNUSED)
+<P><STRONG><a name="[c9]"></a>__semihosting_library_function</STRONG> (Thumb, 0 bytes, Stack size unknown bytes, indicate_semi.o(.text), UNUSED)
 
 <P><STRONG><a name="[4]"></a>BusFault_Handler</STRONG> (Thumb, 4 bytes, Stack size 0 bytes, stm32f4xx_it.o(.text.BusFault_Handler))
 <BR>[Address Reference Count : 1]<UL><LI> startup_stm32f40xx.o(RESET)
@@ -593,7 +593,7 @@ Global Symbols
 </UL>
 
 <P><STRONG><a name="[76]"></a>DrawTestPage</STRONG> (Thumb, 202 bytes, Stack size 48 bytes, test.o(.text.DrawTestPage))
-<BR><BR>[Stack]<UL><LI>Max Depth = 288<LI>Call Chain = DrawTestPage &rArr; Gui_StrCenter &rArr; Show_Str &rArr; GUI_DrawFont32 &rArr; LCD_DrawPoint &rArr; LCD_SetCursor &rArr; LCD_SetWindows &rArr; LCD_WriteRAM_Prepare &rArr; LCD_WR_REG &rArr; SPI_Stop &rArr; SPI_CS &rArr; GPIO_WriteBit
+<BR><BR>[Stack]<UL><LI>Max Depth = 280<LI>Call Chain = DrawTestPage &rArr; Gui_StrCenter &rArr; Show_Str &rArr; GUI_DrawFont32 &rArr; LCD_DrawPoint &rArr; LCD_SetCursor &rArr; LCD_SetWindows &rArr; LCD_WriteRAM_Prepare &rArr; LCD_WR_REG &rArr; SPI_ExchangeByte &rArr; SPI_I2S_SendData
 </UL>
 <BR>[Calls]<UL><LI><a href="#[79]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Gui_StrCenter
 <LI><a href="#[78]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;LCD_Fill
@@ -609,20 +609,14 @@ Global Symbols
 <LI><a href="#[8c]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;SPI_Initilize
 </UL>
 
-<P><STRONG><a name="[99]"></a>GPIO_PinAFConfig</STRONG> (Thumb, 114 bytes, Stack size 16 bytes, stm32f4xx_gpio.o(.text.GPIO_PinAFConfig))
+<P><STRONG><a name="[97]"></a>GPIO_PinAFConfig</STRONG> (Thumb, 114 bytes, Stack size 16 bytes, stm32f4xx_gpio.o(.text.GPIO_PinAFConfig))
 <BR><BR>[Stack]<UL><LI>Max Depth = 16<LI>Call Chain = GPIO_PinAFConfig
 </UL>
 <BR>[Called By]<UL><LI><a href="#[8c]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;SPI_Initilize
 </UL>
 
-<P><STRONG><a name="[95]"></a>GPIO_WriteBit</STRONG> (Thumb, 46 bytes, Stack size 8 bytes, stm32f4xx_gpio.o(.text.GPIO_WriteBit))
-<BR><BR>[Stack]<UL><LI>Max Depth = 8<LI>Call Chain = GPIO_WriteBit
-</UL>
-<BR>[Called By]<UL><LI><a href="#[94]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;SPI_CS
-</UL>
-
 <P><STRONG><a name="[7a]"></a>GUI_DrawFont16</STRONG> (Thumb, 462 bytes, Stack size 32 bytes, 2.4tft.o(.text.GUI_DrawFont16))
-<BR><BR>[Stack]<UL><LI>Max Depth = 144<LI>Call Chain = GUI_DrawFont16 &rArr; LCD_DrawPoint &rArr; LCD_SetCursor &rArr; LCD_SetWindows &rArr; LCD_WriteRAM_Prepare &rArr; LCD_WR_REG &rArr; SPI_Stop &rArr; SPI_CS &rArr; GPIO_WriteBit
+<BR><BR>[Stack]<UL><LI>Max Depth = 136<LI>Call Chain = GUI_DrawFont16 &rArr; LCD_DrawPoint &rArr; LCD_SetCursor &rArr; LCD_SetWindows &rArr; LCD_WriteRAM_Prepare &rArr; LCD_WR_REG &rArr; SPI_ExchangeByte &rArr; SPI_I2S_SendData
 </UL>
 <BR>[Calls]<UL><LI><a href="#[7b]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;LCD_SetWindows
 <LI><a href="#[7d]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;LCD_DrawPoint
@@ -632,7 +626,7 @@ Global Symbols
 </UL>
 
 <P><STRONG><a name="[7e]"></a>GUI_DrawFont24</STRONG> (Thumb, 454 bytes, Stack size 32 bytes, 2.4tft.o(.text.GUI_DrawFont24))
-<BR><BR>[Stack]<UL><LI>Max Depth = 144<LI>Call Chain = GUI_DrawFont24 &rArr; LCD_DrawPoint &rArr; LCD_SetCursor &rArr; LCD_SetWindows &rArr; LCD_WriteRAM_Prepare &rArr; LCD_WR_REG &rArr; SPI_Stop &rArr; SPI_CS &rArr; GPIO_WriteBit
+<BR><BR>[Stack]<UL><LI>Max Depth = 136<LI>Call Chain = GUI_DrawFont24 &rArr; LCD_DrawPoint &rArr; LCD_SetCursor &rArr; LCD_SetWindows &rArr; LCD_WriteRAM_Prepare &rArr; LCD_WR_REG &rArr; SPI_ExchangeByte &rArr; SPI_I2S_SendData
 </UL>
 <BR>[Calls]<UL><LI><a href="#[7b]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;LCD_SetWindows
 <LI><a href="#[7d]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;LCD_DrawPoint
@@ -642,7 +636,7 @@ Global Symbols
 </UL>
 
 <P><STRONG><a name="[7f]"></a>GUI_DrawFont32</STRONG> (Thumb, 462 bytes, Stack size 32 bytes, 2.4tft.o(.text.GUI_DrawFont32))
-<BR><BR>[Stack]<UL><LI>Max Depth = 144<LI>Call Chain = GUI_DrawFont32 &rArr; LCD_DrawPoint &rArr; LCD_SetCursor &rArr; LCD_SetWindows &rArr; LCD_WriteRAM_Prepare &rArr; LCD_WR_REG &rArr; SPI_Stop &rArr; SPI_CS &rArr; GPIO_WriteBit
+<BR><BR>[Stack]<UL><LI>Max Depth = 136<LI>Call Chain = GUI_DrawFont32 &rArr; LCD_DrawPoint &rArr; LCD_SetCursor &rArr; LCD_SetWindows &rArr; LCD_WriteRAM_Prepare &rArr; LCD_WR_REG &rArr; SPI_ExchangeByte &rArr; SPI_I2S_SendData
 </UL>
 <BR>[Calls]<UL><LI><a href="#[7b]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;LCD_SetWindows
 <LI><a href="#[7d]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;LCD_DrawPoint
@@ -652,7 +646,7 @@ Global Symbols
 </UL>
 
 <P><STRONG><a name="[80]"></a>Gui_Drawbmp16</STRONG> (Thumb, 138 bytes, Stack size 24 bytes, 2.4tft.o(.text.Gui_Drawbmp16))
-<BR><BR>[Stack]<UL><LI>Max Depth = 104<LI>Call Chain = Gui_Drawbmp16 &rArr; LCD_SetWindows &rArr; LCD_WriteRAM_Prepare &rArr; LCD_WR_REG &rArr; SPI_Stop &rArr; SPI_CS &rArr; GPIO_WriteBit
+<BR><BR>[Stack]<UL><LI>Max Depth = 96<LI>Call Chain = Gui_Drawbmp16 &rArr; LCD_SetWindows &rArr; LCD_WriteRAM_Prepare &rArr; LCD_WR_REG &rArr; SPI_ExchangeByte &rArr; SPI_I2S_SendData
 </UL>
 <BR>[Calls]<UL><LI><a href="#[7b]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;LCD_SetWindows
 <LI><a href="#[7c]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Lcd_WriteData_16Bit
@@ -661,7 +655,7 @@ Global Symbols
 </UL>
 
 <P><STRONG><a name="[79]"></a>Gui_StrCenter</STRONG> (Thumb, 126 bytes, Stack size 48 bytes, 2.4tft.o(.text.Gui_StrCenter))
-<BR><BR>[Stack]<UL><LI>Max Depth = 240<LI>Call Chain = Gui_StrCenter &rArr; Show_Str &rArr; GUI_DrawFont32 &rArr; LCD_DrawPoint &rArr; LCD_SetCursor &rArr; LCD_SetWindows &rArr; LCD_WriteRAM_Prepare &rArr; LCD_WR_REG &rArr; SPI_Stop &rArr; SPI_CS &rArr; GPIO_WriteBit
+<BR><BR>[Stack]<UL><LI>Max Depth = 232<LI>Call Chain = Gui_StrCenter &rArr; Show_Str &rArr; GUI_DrawFont32 &rArr; LCD_DrawPoint &rArr; LCD_SetCursor &rArr; LCD_SetWindows &rArr; LCD_WriteRAM_Prepare &rArr; LCD_WR_REG &rArr; SPI_ExchangeByte &rArr; SPI_I2S_SendData
 </UL>
 <BR>[Calls]<UL><LI><a href="#[82]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Show_Str
 <LI><a href="#[81]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;strlen
@@ -673,7 +667,7 @@ Global Symbols
 <BR>[Address Reference Count : 1]<UL><LI> startup_stm32f40xx.o(RESET)
 </UL>
 <P><STRONG><a name="[77]"></a>LCD_Clear</STRONG> (Thumb, 138 bytes, Stack size 24 bytes, 2.4tft.o(.text.LCD_Clear))
-<BR><BR>[Stack]<UL><LI>Max Depth = 104<LI>Call Chain = LCD_Clear &rArr; LCD_SetWindows &rArr; LCD_WriteRAM_Prepare &rArr; LCD_WR_REG &rArr; SPI_Stop &rArr; SPI_CS &rArr; GPIO_WriteBit
+<BR><BR>[Stack]<UL><LI>Max Depth = 96<LI>Call Chain = LCD_Clear &rArr; LCD_SetWindows &rArr; LCD_WriteRAM_Prepare &rArr; LCD_WR_REG &rArr; SPI_ExchangeByte &rArr; SPI_I2S_SendData
 </UL>
 <BR>[Calls]<UL><LI><a href="#[7b]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;LCD_SetWindows
 <LI><a href="#[7c]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Lcd_WriteData_16Bit
@@ -685,7 +679,7 @@ Global Symbols
 </UL>
 
 <P><STRONG><a name="[85]"></a>LCD_Direction</STRONG> (Thumb, 168 bytes, Stack size 16 bytes, 2.4tft.o(.text.LCD_Direction))
-<BR><BR>[Stack]<UL><LI>Max Depth = 80<LI>Call Chain = LCD_Direction &rArr; LCD_WriteReg &rArr; LCD_WR_DATA &rArr; SPI_Stop &rArr; SPI_CS &rArr; GPIO_WriteBit
+<BR><BR>[Stack]<UL><LI>Max Depth = 72<LI>Call Chain = LCD_Direction &rArr; LCD_WriteReg &rArr; LCD_WR_DATA &rArr; SPI_ExchangeByte &rArr; SPI_I2S_SendData
 </UL>
 <BR>[Calls]<UL><LI><a href="#[86]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;LCD_WriteReg
 </UL>
@@ -694,7 +688,7 @@ Global Symbols
 </UL>
 
 <P><STRONG><a name="[7d]"></a>LCD_DrawPoint</STRONG> (Thumb, 42 bytes, Stack size 16 bytes, 2.4tft.o(.text.LCD_DrawPoint))
-<BR><BR>[Stack]<UL><LI>Max Depth = 112<LI>Call Chain = LCD_DrawPoint &rArr; LCD_SetCursor &rArr; LCD_SetWindows &rArr; LCD_WriteRAM_Prepare &rArr; LCD_WR_REG &rArr; SPI_Stop &rArr; SPI_CS &rArr; GPIO_WriteBit
+<BR><BR>[Stack]<UL><LI>Max Depth = 104<LI>Call Chain = LCD_DrawPoint &rArr; LCD_SetCursor &rArr; LCD_SetWindows &rArr; LCD_WriteRAM_Prepare &rArr; LCD_WR_REG &rArr; SPI_ExchangeByte &rArr; SPI_I2S_SendData
 </UL>
 <BR>[Calls]<UL><LI><a href="#[87]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;LCD_SetCursor
 <LI><a href="#[7c]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Lcd_WriteData_16Bit
@@ -706,7 +700,7 @@ Global Symbols
 </UL>
 
 <P><STRONG><a name="[78]"></a>LCD_Fill</STRONG> (Thumb, 192 bytes, Stack size 32 bytes, 2.4tft.o(.text.LCD_Fill))
-<BR><BR>[Stack]<UL><LI>Max Depth = 112<LI>Call Chain = LCD_Fill &rArr; LCD_SetWindows &rArr; LCD_WriteRAM_Prepare &rArr; LCD_WR_REG &rArr; SPI_Stop &rArr; SPI_CS &rArr; GPIO_WriteBit
+<BR><BR>[Stack]<UL><LI>Max Depth = 104<LI>Call Chain = LCD_Fill &rArr; LCD_SetWindows &rArr; LCD_WriteRAM_Prepare &rArr; LCD_WR_REG &rArr; SPI_ExchangeByte &rArr; SPI_I2S_SendData
 </UL>
 <BR>[Calls]<UL><LI><a href="#[7b]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;LCD_SetWindows
 <LI><a href="#[7c]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Lcd_WriteData_16Bit
@@ -724,7 +718,7 @@ Global Symbols
 </UL>
 
 <P><STRONG><a name="[8b]"></a>LCD_Init</STRONG> (Thumb, 630 bytes, Stack size 72 bytes, 2.4tft.o(.text.LCD_Init))
-<BR><BR>[Stack]<UL><LI>Max Depth = 176<LI>Call Chain = LCD_Init &rArr; LCD_Clear &rArr; LCD_SetWindows &rArr; LCD_WriteRAM_Prepare &rArr; LCD_WR_REG &rArr; SPI_Stop &rArr; SPI_CS &rArr; GPIO_WriteBit
+<BR><BR>[Stack]<UL><LI>Max Depth = 168<LI>Call Chain = LCD_Init &rArr; LCD_Clear &rArr; LCD_SetWindows &rArr; LCD_WriteRAM_Prepare &rArr; LCD_WR_REG &rArr; SPI_ExchangeByte &rArr; SPI_I2S_SendData
 </UL>
 <BR>[Calls]<UL><LI><a href="#[85]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;LCD_Direction
 <LI><a href="#[74]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Delay_ms
@@ -747,7 +741,7 @@ Global Symbols
 </UL>
 
 <P><STRONG><a name="[87]"></a>LCD_SetCursor</STRONG> (Thumb, 32 bytes, Stack size 16 bytes, 2.4tft.o(.text.LCD_SetCursor))
-<BR><BR>[Stack]<UL><LI>Max Depth = 96<LI>Call Chain = LCD_SetCursor &rArr; LCD_SetWindows &rArr; LCD_WriteRAM_Prepare &rArr; LCD_WR_REG &rArr; SPI_Stop &rArr; SPI_CS &rArr; GPIO_WriteBit
+<BR><BR>[Stack]<UL><LI>Max Depth = 88<LI>Call Chain = LCD_SetCursor &rArr; LCD_SetWindows &rArr; LCD_WriteRAM_Prepare &rArr; LCD_WR_REG &rArr; SPI_ExchangeByte &rArr; SPI_I2S_SendData
 </UL>
 <BR>[Calls]<UL><LI><a href="#[7b]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;LCD_SetWindows
 </UL>
@@ -755,7 +749,7 @@ Global Symbols
 </UL>
 
 <P><STRONG><a name="[7b]"></a>LCD_SetWindows</STRONG> (Thumb, 116 bytes, Stack size 24 bytes, 2.4tft.o(.text.LCD_SetWindows))
-<BR><BR>[Stack]<UL><LI>Max Depth = 80<LI>Call Chain = LCD_SetWindows &rArr; LCD_WriteRAM_Prepare &rArr; LCD_WR_REG &rArr; SPI_Stop &rArr; SPI_CS &rArr; GPIO_WriteBit
+<BR><BR>[Stack]<UL><LI>Max Depth = 72<LI>Call Chain = LCD_SetWindows &rArr; LCD_WriteRAM_Prepare &rArr; LCD_WR_REG &rArr; SPI_ExchangeByte &rArr; SPI_I2S_SendData
 </UL>
 <BR>[Calls]<UL><LI><a href="#[90]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;LCD_WriteRAM_Prepare
 <LI><a href="#[8f]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;LCD_WR_DATA
@@ -772,7 +766,7 @@ Global Symbols
 </UL>
 
 <P><STRONG><a name="[91]"></a>LCD_ShowChar</STRONG> (Thumb, 550 bytes, Stack size 32 bytes, 2.4tft.o(.text.LCD_ShowChar))
-<BR><BR>[Stack]<UL><LI>Max Depth = 144<LI>Call Chain = LCD_ShowChar &rArr; LCD_DrawPoint &rArr; LCD_SetCursor &rArr; LCD_SetWindows &rArr; LCD_WriteRAM_Prepare &rArr; LCD_WR_REG &rArr; SPI_Stop &rArr; SPI_CS &rArr; GPIO_WriteBit
+<BR><BR>[Stack]<UL><LI>Max Depth = 136<LI>Call Chain = LCD_ShowChar &rArr; LCD_DrawPoint &rArr; LCD_SetCursor &rArr; LCD_SetWindows &rArr; LCD_WriteRAM_Prepare &rArr; LCD_WR_REG &rArr; SPI_ExchangeByte &rArr; SPI_I2S_SendData
 </UL>
 <BR>[Calls]<UL><LI><a href="#[7b]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;LCD_SetWindows
 <LI><a href="#[7d]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;LCD_DrawPoint
@@ -782,7 +776,7 @@ Global Symbols
 </UL>
 
 <P><STRONG><a name="[8f]"></a>LCD_WR_DATA</STRONG> (Thumb, 40 bytes, Stack size 16 bytes, 2.4tft.o(.text.LCD_WR_DATA))
-<BR><BR>[Stack]<UL><LI>Max Depth = 48<LI>Call Chain = LCD_WR_DATA &rArr; SPI_Stop &rArr; SPI_CS &rArr; GPIO_WriteBit
+<BR><BR>[Stack]<UL><LI>Max Depth = 40<LI>Call Chain = LCD_WR_DATA &rArr; SPI_ExchangeByte &rArr; SPI_I2S_SendData
 </UL>
 <BR>[Calls]<UL><LI><a href="#[92]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;SPI_ExchangeByte
 <LI><a href="#[84]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;SPI_Stop
@@ -794,7 +788,7 @@ Global Symbols
 </UL>
 
 <P><STRONG><a name="[8e]"></a>LCD_WR_REG</STRONG> (Thumb, 40 bytes, Stack size 16 bytes, 2.4tft.o(.text.LCD_WR_REG))
-<BR><BR>[Stack]<UL><LI>Max Depth = 48<LI>Call Chain = LCD_WR_REG &rArr; SPI_Stop &rArr; SPI_CS &rArr; GPIO_WriteBit
+<BR><BR>[Stack]<UL><LI>Max Depth = 40<LI>Call Chain = LCD_WR_REG &rArr; SPI_ExchangeByte &rArr; SPI_I2S_SendData
 </UL>
 <BR>[Calls]<UL><LI><a href="#[92]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;SPI_ExchangeByte
 <LI><a href="#[84]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;SPI_Stop
@@ -807,7 +801,7 @@ Global Symbols
 </UL>
 
 <P><STRONG><a name="[90]"></a>LCD_WriteRAM_Prepare</STRONG> (Thumb, 18 bytes, Stack size 8 bytes, 2.4tft.o(.text.LCD_WriteRAM_Prepare))
-<BR><BR>[Stack]<UL><LI>Max Depth = 56<LI>Call Chain = LCD_WriteRAM_Prepare &rArr; LCD_WR_REG &rArr; SPI_Stop &rArr; SPI_CS &rArr; GPIO_WriteBit
+<BR><BR>[Stack]<UL><LI>Max Depth = 48<LI>Call Chain = LCD_WriteRAM_Prepare &rArr; LCD_WR_REG &rArr; SPI_ExchangeByte &rArr; SPI_I2S_SendData
 </UL>
 <BR>[Calls]<UL><LI><a href="#[8e]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;LCD_WR_REG
 </UL>
@@ -815,7 +809,7 @@ Global Symbols
 </UL>
 
 <P><STRONG><a name="[86]"></a>LCD_WriteReg</STRONG> (Thumb, 32 bytes, Stack size 16 bytes, 2.4tft.o(.text.LCD_WriteReg))
-<BR><BR>[Stack]<UL><LI>Max Depth = 64<LI>Call Chain = LCD_WriteReg &rArr; LCD_WR_DATA &rArr; SPI_Stop &rArr; SPI_CS &rArr; GPIO_WriteBit
+<BR><BR>[Stack]<UL><LI>Max Depth = 56<LI>Call Chain = LCD_WriteReg &rArr; LCD_WR_DATA &rArr; SPI_ExchangeByte &rArr; SPI_I2S_SendData
 </UL>
 <BR>[Calls]<UL><LI><a href="#[8f]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;LCD_WR_DATA
 <LI><a href="#[8e]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;LCD_WR_REG
@@ -824,7 +818,7 @@ Global Symbols
 </UL>
 
 <P><STRONG><a name="[7c]"></a>Lcd_WriteData_16Bit</STRONG> (Thumb, 48 bytes, Stack size 16 bytes, 2.4tft.o(.text.Lcd_WriteData_16Bit))
-<BR><BR>[Stack]<UL><LI>Max Depth = 48<LI>Call Chain = Lcd_WriteData_16Bit &rArr; SPI_Stop &rArr; SPI_CS &rArr; GPIO_WriteBit
+<BR><BR>[Stack]<UL><LI>Max Depth = 40<LI>Call Chain = Lcd_WriteData_16Bit &rArr; SPI_ExchangeByte &rArr; SPI_I2S_SendData
 </UL>
 <BR>[Calls]<UL><LI><a href="#[92]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;SPI_ExchangeByte
 <LI><a href="#[84]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;SPI_Stop
@@ -860,14 +854,20 @@ Global Symbols
 <LI><a href="#[8c]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;SPI_Initilize
 </UL>
 
-<P><STRONG><a name="[9a]"></a>RCC_APB2PeriphClockCmd</STRONG> (Thumb, 56 bytes, Stack size 8 bytes, stm32f4xx_rcc.o(.text.RCC_APB2PeriphClockCmd))
+<P><STRONG><a name="[99]"></a>RCC_APB2PeriphClockCmd</STRONG> (Thumb, 56 bytes, Stack size 8 bytes, stm32f4xx_rcc.o(.text.RCC_APB2PeriphClockCmd))
 <BR><BR>[Stack]<UL><LI>Max Depth = 8<LI>Call Chain = RCC_APB2PeriphClockCmd
 </UL>
 <BR>[Called By]<UL><LI><a href="#[8c]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;SPI_Initilize
 </UL>
 
+<P><STRONG><a name="[98]"></a>RCC_APB2PeriphResetCmd</STRONG> (Thumb, 56 bytes, Stack size 8 bytes, stm32f4xx_rcc.o(.text.RCC_APB2PeriphResetCmd))
+<BR><BR>[Stack]<UL><LI>Max Depth = 8<LI>Call Chain = RCC_APB2PeriphResetCmd
+</UL>
+<BR>[Called By]<UL><LI><a href="#[8c]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;SPI_Initilize
+</UL>
+
 <P><STRONG><a name="[93]"></a>Rotate_Test</STRONG> (Thumb, 174 bytes, Stack size 48 bytes, test.o(.text.Rotate_Test))
-<BR><BR>[Stack]<UL><LI>Max Depth = 336<LI>Call Chain = Rotate_Test &rArr; DrawTestPage &rArr; Gui_StrCenter &rArr; Show_Str &rArr; GUI_DrawFont32 &rArr; LCD_DrawPoint &rArr; LCD_SetCursor &rArr; LCD_SetWindows &rArr; LCD_WriteRAM_Prepare &rArr; LCD_WR_REG &rArr; SPI_Stop &rArr; SPI_CS &rArr; GPIO_WriteBit
+<BR><BR>[Stack]<UL><LI>Max Depth = 328<LI>Call Chain = Rotate_Test &rArr; DrawTestPage &rArr; Gui_StrCenter &rArr; Show_Str &rArr; GUI_DrawFont32 &rArr; LCD_DrawPoint &rArr; LCD_SetCursor &rArr; LCD_SetWindows &rArr; LCD_WriteRAM_Prepare &rArr; LCD_WR_REG &rArr; SPI_ExchangeByte &rArr; SPI_I2S_SendData
 </UL>
 <BR>[Calls]<UL><LI><a href="#[76]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;DrawTestPage
 <LI><a href="#[80]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Gui_Drawbmp16
@@ -878,17 +878,7 @@ Global Symbols
 <BR>[Called By]<UL><LI><a href="#[69]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;main
 </UL>
 
-<P><STRONG><a name="[94]"></a>SPI_CS</STRONG> (Thumb, 28 bytes, Stack size 16 bytes, spi.o(.text.SPI_CS))
-<BR><BR>[Stack]<UL><LI>Max Depth = 24<LI>Call Chain = SPI_CS &rArr; GPIO_WriteBit
-</UL>
-<BR>[Calls]<UL><LI><a href="#[95]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;GPIO_WriteBit
-</UL>
-<BR>[Called By]<UL><LI><a href="#[8c]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;SPI_Initilize
-<LI><a href="#[84]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;SPI_Stop
-<LI><a href="#[83]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;SPI_Start
-</UL>
-
-<P><STRONG><a name="[9c]"></a>SPI_Cmd</STRONG> (Thumb, 44 bytes, Stack size 8 bytes, stm32f4xx_spi.o(.text.SPI_Cmd))
+<P><STRONG><a name="[9b]"></a>SPI_Cmd</STRONG> (Thumb, 44 bytes, Stack size 8 bytes, stm32f4xx_spi.o(.text.SPI_Cmd))
 <BR><BR>[Stack]<UL><LI>Max Depth = 8<LI>Call Chain = SPI_Cmd
 </UL>
 <BR>[Called By]<UL><LI><a href="#[8c]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;SPI_Initilize
@@ -897,70 +887,62 @@ Global Symbols
 <P><STRONG><a name="[92]"></a>SPI_ExchangeByte</STRONG> (Thumb, 90 bytes, Stack size 16 bytes, spi.o(.text.SPI_ExchangeByte))
 <BR><BR>[Stack]<UL><LI>Max Depth = 24<LI>Call Chain = SPI_ExchangeByte &rArr; SPI_I2S_SendData
 </UL>
-<BR>[Calls]<UL><LI><a href="#[98]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;SPI_I2S_ReceiveData
-<LI><a href="#[97]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;SPI_I2S_SendData
-<LI><a href="#[96]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;SPI_I2S_GetFlagStatus
+<BR>[Calls]<UL><LI><a href="#[96]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;SPI_I2S_ReceiveData
+<LI><a href="#[95]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;SPI_I2S_SendData
+<LI><a href="#[94]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;SPI_I2S_GetFlagStatus
 </UL>
 <BR>[Called By]<UL><LI><a href="#[7c]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Lcd_WriteData_16Bit
 <LI><a href="#[8f]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;LCD_WR_DATA
 <LI><a href="#[8e]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;LCD_WR_REG
 </UL>
 
-<P><STRONG><a name="[96]"></a>SPI_I2S_GetFlagStatus</STRONG> (Thumb, 54 bytes, Stack size 8 bytes, stm32f4xx_spi.o(.text.SPI_I2S_GetFlagStatus))
+<P><STRONG><a name="[94]"></a>SPI_I2S_GetFlagStatus</STRONG> (Thumb, 54 bytes, Stack size 8 bytes, stm32f4xx_spi.o(.text.SPI_I2S_GetFlagStatus))
 <BR><BR>[Stack]<UL><LI>Max Depth = 8<LI>Call Chain = SPI_I2S_GetFlagStatus
 </UL>
 <BR>[Called By]<UL><LI><a href="#[92]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;SPI_ExchangeByte
 </UL>
 
-<P><STRONG><a name="[98]"></a>SPI_I2S_ReceiveData</STRONG> (Thumb, 12 bytes, Stack size 4 bytes, stm32f4xx_spi.o(.text.SPI_I2S_ReceiveData))
+<P><STRONG><a name="[96]"></a>SPI_I2S_ReceiveData</STRONG> (Thumb, 12 bytes, Stack size 4 bytes, stm32f4xx_spi.o(.text.SPI_I2S_ReceiveData))
 <BR><BR>[Stack]<UL><LI>Max Depth = 4<LI>Call Chain = SPI_I2S_ReceiveData
 </UL>
 <BR>[Called By]<UL><LI><a href="#[92]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;SPI_ExchangeByte
 </UL>
 
-<P><STRONG><a name="[97]"></a>SPI_I2S_SendData</STRONG> (Thumb, 20 bytes, Stack size 8 bytes, stm32f4xx_spi.o(.text.SPI_I2S_SendData))
+<P><STRONG><a name="[95]"></a>SPI_I2S_SendData</STRONG> (Thumb, 20 bytes, Stack size 8 bytes, stm32f4xx_spi.o(.text.SPI_I2S_SendData))
 <BR><BR>[Stack]<UL><LI>Max Depth = 8<LI>Call Chain = SPI_I2S_SendData
 </UL>
 <BR>[Called By]<UL><LI><a href="#[92]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;SPI_ExchangeByte
 </UL>
 
-<P><STRONG><a name="[9b]"></a>SPI_Init</STRONG> (Thumb, 104 bytes, Stack size 12 bytes, stm32f4xx_spi.o(.text.SPI_Init))
+<P><STRONG><a name="[9a]"></a>SPI_Init</STRONG> (Thumb, 104 bytes, Stack size 12 bytes, stm32f4xx_spi.o(.text.SPI_Init))
 <BR><BR>[Stack]<UL><LI>Max Depth = 12<LI>Call Chain = SPI_Init
 </UL>
 <BR>[Called By]<UL><LI><a href="#[8c]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;SPI_Initilize
 </UL>
 
-<P><STRONG><a name="[8c]"></a>SPI_Initilize</STRONG> (Thumb, 228 bytes, Stack size 72 bytes, spi.o(.text.SPI_Initilize))
-<BR><BR>[Stack]<UL><LI>Max Depth = 96<LI>Call Chain = SPI_Initilize &rArr; SPI_CS &rArr; GPIO_WriteBit
+<P><STRONG><a name="[8c]"></a>SPI_Initilize</STRONG> (Thumb, 252 bytes, Stack size 72 bytes, spi.o(.text.SPI_Initilize))
+<BR><BR>[Stack]<UL><LI>Max Depth = 92<LI>Call Chain = SPI_Initilize &rArr; GPIO_Init
 </UL>
-<BR>[Calls]<UL><LI><a href="#[9c]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;SPI_Cmd
-<LI><a href="#[9b]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;SPI_Init
-<LI><a href="#[9a]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;RCC_APB2PeriphClockCmd
-<LI><a href="#[99]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;GPIO_PinAFConfig
+<BR>[Calls]<UL><LI><a href="#[9b]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;SPI_Cmd
+<LI><a href="#[9a]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;SPI_Init
+<LI><a href="#[99]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;RCC_APB2PeriphClockCmd
+<LI><a href="#[98]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;RCC_APB2PeriphResetCmd
+<LI><a href="#[97]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;GPIO_PinAFConfig
 <LI><a href="#[8a]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;GPIO_Init
 <LI><a href="#[89]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;RCC_AHB1PeriphClockCmd
-<LI><a href="#[94]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;SPI_CS
 </UL>
 <BR>[Called By]<UL><LI><a href="#[8b]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;LCD_Init
 </UL>
 
-<P><STRONG><a name="[83]"></a>SPI_Start</STRONG> (Thumb, 10 bytes, Stack size 8 bytes, spi.o(.text.SPI_Start))
-<BR><BR>[Stack]<UL><LI>Max Depth = 32<LI>Call Chain = SPI_Start &rArr; SPI_CS &rArr; GPIO_WriteBit
-</UL>
-<BR>[Calls]<UL><LI><a href="#[94]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;SPI_CS
-</UL>
-<BR>[Called By]<UL><LI><a href="#[77]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;LCD_Clear
+<P><STRONG><a name="[83]"></a>SPI_Start</STRONG> (Thumb, 14 bytes, Stack size 0 bytes, spi.o(.text.SPI_Start))
+<BR><BR>[Called By]<UL><LI><a href="#[77]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;LCD_Clear
 <LI><a href="#[7c]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Lcd_WriteData_16Bit
 <LI><a href="#[8f]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;LCD_WR_DATA
 <LI><a href="#[8e]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;LCD_WR_REG
 </UL>
 
-<P><STRONG><a name="[84]"></a>SPI_Stop</STRONG> (Thumb, 10 bytes, Stack size 8 bytes, spi.o(.text.SPI_Stop))
-<BR><BR>[Stack]<UL><LI>Max Depth = 32<LI>Call Chain = SPI_Stop &rArr; SPI_CS &rArr; GPIO_WriteBit
-</UL>
-<BR>[Calls]<UL><LI><a href="#[94]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;SPI_CS
-</UL>
-<BR>[Called By]<UL><LI><a href="#[77]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;LCD_Clear
+<P><STRONG><a name="[84]"></a>SPI_Stop</STRONG> (Thumb, 14 bytes, Stack size 0 bytes, spi.o(.text.SPI_Stop))
+<BR><BR>[Called By]<UL><LI><a href="#[77]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;LCD_Clear
 <LI><a href="#[7c]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Lcd_WriteData_16Bit
 <LI><a href="#[8f]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;LCD_WR_DATA
 <LI><a href="#[8e]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;LCD_WR_REG
@@ -970,7 +952,7 @@ Global Symbols
 <BR>[Address Reference Count : 1]<UL><LI> startup_stm32f40xx.o(RESET)
 </UL>
 <P><STRONG><a name="[82]"></a>Show_Str</STRONG> (Thumb, 572 bytes, Stack size 48 bytes, 2.4tft.o(.text.Show_Str))
-<BR><BR>[Stack]<UL><LI>Max Depth = 192<LI>Call Chain = Show_Str &rArr; GUI_DrawFont32 &rArr; LCD_DrawPoint &rArr; LCD_SetCursor &rArr; LCD_SetWindows &rArr; LCD_WriteRAM_Prepare &rArr; LCD_WR_REG &rArr; SPI_Stop &rArr; SPI_CS &rArr; GPIO_WriteBit
+<BR><BR>[Stack]<UL><LI>Max Depth = 184<LI>Call Chain = Show_Str &rArr; GUI_DrawFont32 &rArr; LCD_DrawPoint &rArr; LCD_SetCursor &rArr; LCD_SetWindows &rArr; LCD_WriteRAM_Prepare &rArr; LCD_WR_REG &rArr; SPI_ExchangeByte &rArr; SPI_I2S_SendData
 </UL>
 <BR>[Calls]<UL><LI><a href="#[7f]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;GUI_DrawFont32
 <LI><a href="#[7e]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;GUI_DrawFont24
@@ -990,14 +972,14 @@ Global Symbols
 <P><STRONG><a name="[9]"></a>SysTick_Handler</STRONG> (Thumb, 60 bytes, Stack size 16 bytes, port.o(.text.SysTick_Handler))
 <BR><BR>[Stack]<UL><LI>Max Depth = 56<LI>Call Chain = SysTick_Handler &rArr; xTaskIncrementTick
 </UL>
-<BR>[Calls]<UL><LI><a href="#[9d]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;xTaskIncrementTick
+<BR>[Calls]<UL><LI><a href="#[9c]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;xTaskIncrementTick
 </UL>
 <BR>[Address Reference Count : 1]<UL><LI> startup_stm32f40xx.o(RESET)
 </UL>
 <P><STRONG><a name="[5c]"></a>SystemInit</STRONG> (Thumb, 116 bytes, Stack size 8 bytes, system_stm32f4xx.o(.text.SystemInit))
 <BR><BR>[Stack]<UL><LI>Max Depth = 20<LI>Call Chain = SystemInit &rArr; SetSysClock
 </UL>
-<BR>[Calls]<UL><LI><a href="#[9e]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;SetSysClock
+<BR>[Calls]<UL><LI><a href="#[9d]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;SetSysClock
 </UL>
 <BR>[Address Reference Count : 1]<UL><LI> startup_stm32f40xx.o(.text)
 </UL>
@@ -1005,7 +987,7 @@ Global Symbols
 <BR>[Address Reference Count : 1]<UL><LI> startup_stm32f40xx.o(RESET)
 </UL>
 <P><STRONG><a name="[69]"></a>main</STRONG> (Thumb, 20 bytes, Stack size 16 bytes, main.o(.text.main))
-<BR><BR>[Stack]<UL><LI>Max Depth = 352<LI>Call Chain = main &rArr; Rotate_Test &rArr; DrawTestPage &rArr; Gui_StrCenter &rArr; Show_Str &rArr; GUI_DrawFont32 &rArr; LCD_DrawPoint &rArr; LCD_SetCursor &rArr; LCD_SetWindows &rArr; LCD_WriteRAM_Prepare &rArr; LCD_WR_REG &rArr; SPI_Stop &rArr; SPI_CS &rArr; GPIO_WriteBit
+<BR><BR>[Stack]<UL><LI>Max Depth = 344<LI>Call Chain = main &rArr; Rotate_Test &rArr; DrawTestPage &rArr; Gui_StrCenter &rArr; Show_Str &rArr; GUI_DrawFont32 &rArr; LCD_DrawPoint &rArr; LCD_SetCursor &rArr; LCD_SetWindows &rArr; LCD_WriteRAM_Prepare &rArr; LCD_WR_REG &rArr; SPI_ExchangeByte &rArr; SPI_I2S_SendData
 </UL>
 <BR>[Calls]<UL><LI><a href="#[93]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Rotate_Test
 <LI><a href="#[8b]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;LCD_Init
@@ -1019,10 +1001,10 @@ Global Symbols
 <BR>[Called By]<UL><LI><a href="#[8]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;PendSV_Handler
 </UL>
 
-<P><STRONG><a name="[9d]"></a>xTaskIncrementTick</STRONG> (Thumb, 586 bytes, Stack size 40 bytes, tasks.o(.text.xTaskIncrementTick))
+<P><STRONG><a name="[9c]"></a>xTaskIncrementTick</STRONG> (Thumb, 586 bytes, Stack size 40 bytes, tasks.o(.text.xTaskIncrementTick))
 <BR><BR>[Stack]<UL><LI>Max Depth = 40<LI>Call Chain = xTaskIncrementTick
 </UL>
-<BR>[Calls]<UL><LI><a href="#[9f]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;prvResetNextTaskUnblockTime
+<BR>[Calls]<UL><LI><a href="#[9e]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;prvResetNextTaskUnblockTime
 </UL>
 <BR>[Called By]<UL><LI><a href="#[9]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;SysTick_Handler
 </UL>
@@ -1031,18 +1013,18 @@ Global Symbols
 <BR><BR>[Called By]<UL><LI><a href="#[62]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__rt_lib_init_fp_1
 </UL>
 
-<P><STRONG><a name="[cb]"></a>__fplib_config_fpu_vfp</STRONG> (Thumb, 0 bytes, Stack size unknown bytes, fpinit.o(x$fpl$fpinit), UNUSED)
+<P><STRONG><a name="[ca]"></a>__fplib_config_fpu_vfp</STRONG> (Thumb, 0 bytes, Stack size unknown bytes, fpinit.o(x$fpl$fpinit), UNUSED)
 
-<P><STRONG><a name="[cc]"></a>__fplib_config_pureend_doubles</STRONG> (Thumb, 0 bytes, Stack size unknown bytes, fpinit.o(x$fpl$fpinit), UNUSED)
+<P><STRONG><a name="[cb]"></a>__fplib_config_pureend_doubles</STRONG> (Thumb, 0 bytes, Stack size unknown bytes, fpinit.o(x$fpl$fpinit), UNUSED)
 <P>
 <H3>
 Local Symbols
 </H3>
-<P><STRONG><a name="[9f]"></a>prvResetNextTaskUnblockTime</STRONG> (Thumb, 60 bytes, Stack size 0 bytes, tasks.o(.text.prvResetNextTaskUnblockTime))
-<BR><BR>[Called By]<UL><LI><a href="#[9d]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;xTaskIncrementTick
+<P><STRONG><a name="[9e]"></a>prvResetNextTaskUnblockTime</STRONG> (Thumb, 60 bytes, Stack size 0 bytes, tasks.o(.text.prvResetNextTaskUnblockTime))
+<BR><BR>[Called By]<UL><LI><a href="#[9c]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;xTaskIncrementTick
 </UL>
 
-<P><STRONG><a name="[9e]"></a>SetSysClock</STRONG> (Thumb, 308 bytes, Stack size 12 bytes, system_stm32f4xx.o(.text.SetSysClock))
+<P><STRONG><a name="[9d]"></a>SetSysClock</STRONG> (Thumb, 308 bytes, Stack size 12 bytes, system_stm32f4xx.o(.text.SetSysClock))
 <BR><BR>[Stack]<UL><LI>Max Depth = 12<LI>Call Chain = SetSysClock
 </UL>
 <BR>[Called By]<UL><LI><a href="#[5c]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;SystemInit

@@ -1,6 +1,7 @@
 ./objects/2.4tft.o: Peripherals\2.4_TFT_SPI\2.4TFT.c \
-  User\stm32f4xx_conf.h STM32F4xx_StdPeriph_Driver\stm32f4xx_adc.h \
-  CMSIS\stm32f4xx.h CMSIS\core_cm4.h \
+  Peripherals\2.4_TFT_SPI\2.4TFT.h User\stm32f4xx_conf.h \
+  STM32F4xx_StdPeriph_Driver\stm32f4xx_adc.h CMSIS\stm32f4xx.h \
+  CMSIS\core_cm4.h \
   D:\Softwares\Keil\ARM\ARMCLANG\Bin\..\include\stdint.h \
   CMSIS\core_cmInstr.h CMSIS\core_cmFunc.h CMSIS\core_cmSimd.h \
   CMSIS\system_stm32f4xx.h STM32F4xx_StdPeriph_Driver\stm32f4xx_crc.h \
@@ -27,7 +28,6 @@
   STM32F4xx_StdPeriph_Driver\stm32f4xx_can.h \
   STM32F4xx_StdPeriph_Driver\stm32f4xx_dac.h \
   STM32F4xx_StdPeriph_Driver\stm32f4xx_dcmi.h \
-  STM32F4xx_StdPeriph_Driver\stm32f4xx_fsmc.h \
-  Peripherals\2.4_TFT_SPI\2.4TFT.h System\sys.h System\Delay.h \
-  D:\Softwares\Keil\ARM\ARMCLANG\Bin\..\include\string.h Driver\SPI.h \
-  Peripherals\2.4_TFT_SPI\font.h
+  STM32F4xx_StdPeriph_Driver\stm32f4xx_fsmc.h System\Delay.h \
+  System\sys.h D:\Softwares\Keil\ARM\ARMCLANG\Bin\..\include\string.h \
+  Driver\SPI.h Peripherals\2.4_TFT_SPI\font.h
