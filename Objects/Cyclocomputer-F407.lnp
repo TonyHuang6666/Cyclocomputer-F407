@@ -1,6 +1,8 @@
 --cpu=Cortex-M4.fp.sp
 ".\objects\spi.o"
 ".\objects\iic.o"
+".\objects\pwm.o"
+".\objects\input_capture.o"
 ".\objects\2.4tft.o"
 ".\objects\test.o"
 ".\objects\mpu6050.o"

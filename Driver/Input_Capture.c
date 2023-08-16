@@ -1,14 +1,15 @@
-#include "stm32f4xx.h"
+#include "Input_Capture.h"
+
 //配置输入捕获单元
 void IC_Init(void)
 {
     //开启时钟
     RCC_APB1PeriphClockCmd(RCC_APB1Periph_TIM3, ENABLE);
-    RCC_APB2PeriphClockCmd(RCC_APB2Periph_GPIOA, ENABLE);
+    //RCC_APB2PeriphClockCmd(RCC_APB2Periph_GPIOA, ENABLE);
     //2.配置GPIO
     GPIO_InitTypeDef GPIO_InitStructure;
     GPIO_InitStructure.GPIO_Pin = GPIO_Pin_6;
-    GPIO_InitStructure.GPIO_Mode = GPIO_Mode_IPU;
+    //GPIO_InitStructure.GPIO_Mode = GPIO_Mode_IPU;
     GPIO_InitStructure.GPIO_Speed = GPIO_Speed_50MHz;
     GPIO_Init(GPIOA, &GPIO_InitStructure);
     //3.配置时基单元

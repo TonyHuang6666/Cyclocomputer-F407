@@ -404,6 +404,26 @@
               <FileType>5</FileType>
               <FilePath>.\Driver\IIC.h</FilePath>
             </File>
+            <File>
+              <FileName>PWM.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>.\Driver\PWM.c</FilePath>
+            </File>
+            <File>
+              <FileName>PWM.h</FileName>
+              <FileType>5</FileType>
+              <FilePath>.\Driver\PWM.h</FilePath>
+            </File>
+            <File>
+              <FileName>Input_Capture.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\Cyclocomputer\Driver\Input_Capture.c</FilePath>
+            </File>
+            <File>
+              <FileName>Input_Capture.h</FileName>
+              <FileType>5</FileType>
+              <FilePath>..\Cyclocomputer\Driver\Input_Capture.h</FilePath>
+            </File>
           </Files>
         </Group>
         <Group>

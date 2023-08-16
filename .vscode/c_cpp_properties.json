@@ -22,6 +22,7 @@
                 "D:\\Softwares\\Keil\\ARM\\ARMCLANG\\include\\arm_linux",
                 "D:\\Softwares\\Keil\\ARM\\ARMCLANG\\include\\arm_linux_compat",
                 "D:\\Softwares\\Keil\\ARM\\ARMCLANG\\include\\libcxx",
+                "d:\\OneDrive - email.szu.edu.cn\\Codes\\VS Code\\Cyclocomputer\\Driver",
                 "d:\\OneDrive - email.szu.edu.cn\\Codes\\VS Code\\Cyclocomputer-F407\\FreeRTOS\\portable\\MemMang"
             ],
             "defines": [
