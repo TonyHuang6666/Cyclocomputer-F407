@@ -30,11 +30,11 @@
 #include "MPU6050.h"
 #include "test.h"
 #include "PWM.h"
+#include "Input_Capture.h"
 /* Exported types ------------------------------------------------------------*/
 /* Exported constants --------------------------------------------------------*/
 /* Exported macro ------------------------------------------------------------*/
 /* Exported functions ------------------------------------------------------- */
 void TimingDelay_Decrement(void);
-
 #endif /* __MAIN_H */
 

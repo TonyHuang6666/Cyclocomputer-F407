@@ -38,4 +38,4 @@
   D:\Softwares\Keil\ARM\ARMCLANG\Bin\..\include\string.h Driver\SPI.h \
   Peripherals\MPU6050\MPU6050.h Driver\IIC.h \
   Peripherals\MPU6050\MPU6050_Reg.h Peripherals\2.4_TFT_SPI\test.h \
-  Driver\PWM.h
+  Driver\PWM.h Driver\Input_Capture.h

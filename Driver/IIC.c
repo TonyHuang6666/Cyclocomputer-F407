@@ -28,8 +28,8 @@ void IIC_Initilize(void)
     GPIO_InitStructure.GPIO_Speed = GPIO_SpeedRate;
     GPIO_Init(I2C_GPIO_PORT,&GPIO_InitStructure);
 
-    GPIO_PinAFConfig(I2C_GPIO_PORT,GPIO_PinSource6,GPIO_AF_I2C1);//将GPIOB的6号引脚复用为I2C1的SCL引脚
-    GPIO_PinAFConfig(I2C_GPIO_PORT,GPIO_PinSource7,GPIO_AF_I2C1);//将GPIOB的7号引脚复用为I2C1的SDA引脚
+    GPIO_PinAFConfig(I2C_GPIO_PORT,GPIO_PinSource8,GPIO_AF_I2C1);//将GPIOB的6号引脚复用为I2C1的SCL引脚
+    GPIO_PinAFConfig(I2C_GPIO_PORT,GPIO_PinSource9,GPIO_AF_I2C1);//将GPIOB的7号引脚复用为I2C1的SDA引脚
    
     //2.IIC初始化
     RCC_APB1PeriphClockCmd(I2C_PORT_CLK,ENABLE);

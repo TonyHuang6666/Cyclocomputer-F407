@@ -3,5 +3,5 @@
 #include "stm32f4xx_conf.h"
 void IC_Init(void);
 uint32_t Get_Frequency(void);
-uint32_t Get_Duty(void);
+uint8_t Get_Duty(void);
 #endif
